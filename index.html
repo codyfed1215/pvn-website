@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Free Water Quality Test | PureVida Home</title>
   <meta name="description" content="Free in-home water quality test for Nashville homeowners. Discover what's in your water — hardness, chlorine, contaminants. 20 minutes. No obligation.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <meta property="og:title" content="Free Water Quality Test | PureVida Home">
+  <meta property="og:description" content="Free in-home water quality test for Nashville homeowners. 20 minutes. No obligation.">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -57,108 +63,6 @@
       background: var(--body-bg);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-    }
-
-    /* ===== NAV ===== */
-    .nav {
-      background: var(--body-bg);
-      border-bottom: 1px solid var(--card-border);
-      padding: 12px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .logo-img {
-      height: 36px;
-      width: auto;
-    }
-    .nav-phone { display: none; }
-    .nav-links {
-      display: none;
-      list-style: none;
-      gap: 0;
-      align-items: center;
-    }
-    .nav-links li {
-      padding: 0 16px;
-      border-right: 1px solid var(--card-border);
-    }
-    .nav-links li:last-child { border-right: none; }
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-    .nav-links a:hover { color: var(--text-primary); }
-    .nav-links li.active a {
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .nav-cta {
-      background: var(--sky-500);
-      color: var(--white);
-      padding: 10px 24px;
-      border-radius: 24px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 13px;
-      white-space: nowrap;
-      transition: background 0.15s;
-    }
-    .nav-cta:hover { background: var(--sky-600); }
-
-    @media (min-width: 640px) {
-      .nav { padding: 14px 32px; }
-      .logo-img { height: 40px; }
-      .nav-phone {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--text-secondary);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-      }
-      .nav-phone-icon {
-        width: 36px;
-        height: 36px;
-        background: var(--gray-100);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .nav-phone-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: var(--text-muted);
-        font-weight: 600;
-      }
-      .nav-phone-number {
-        font-size: 15px;
-        font-weight: 700;
-        color: var(--text-primary);
-      }
-    }
-
-    @media (min-width: 768px) {
-      .nav-links { display: flex; }
     }
 
     /* ===== HERO ===== */
@@ -649,6 +553,18 @@
       font-size: 14px;
     }
 
+    .video-tagline {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--gray-500);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .video-tagline em {
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+
     /* ===== FINAL CTA ===== */
     .final-cta {
       background: linear-gradient(135deg, #1e5a8a 0%, #2980b9 50%, #4facdd 100%);
@@ -885,8 +801,8 @@
       .section-sub { font-size: 14px; margin-bottom: 28px; }
       .section-badge { font-size: 11px; padding: 5px 14px; margin-bottom: 12px; }
 
-      .damage-card-placeholder { height: 80px; }
-      .damage-card-placeholder svg { width: 36px; height: 36px; }
+      .damage-card-placeholder { height: 120px; }
+      .damage-card-placeholder svg { width: 44px; height: 44px; }
       .damage-card-body { padding: 12px 14px; }
       .damage-card-body h4 { font-size: 14px; }
       .damage-card-body p { font-size: 12px; }
@@ -928,26 +844,6 @@
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="https://purevida.co" class="logo">
-      <img src="logo.png" alt="PureVida Home" class="logo-img">
-    </a>
-
-    <div class="nav-right">
-      <a href="tel:6157037025" class="nav-phone">
-        <div class="nav-phone-icon">
-          <svg width="16" height="16" fill="none" stroke="#0F172A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3a2 2 0 012-2h2.5a1 1 0 01.9.6L8.8 5a1 1 0 01-.3 1.1L7 7.5a10 10 0 005.5 5.5l1.4-1.5a1 1 0 011.1-.3l3.4 1.4a1 1 0 01.6.9V16a2 2 0 01-2 2C9 18 2 11 2 3z"/></svg>
-        </div>
-        <div>
-          <div class="nav-phone-label">Have questions?</div>
-          <div class="nav-phone-number">615-703-7025</div>
-        </div>
-      </a>
-      <a href="#book" class="nav-cta">Free Water Test</a>
-    </div>
-  </nav>
 
   <!-- SECTION 1 — HERO -->
   <section class="hero">
@@ -1107,7 +1003,7 @@
         <div class="review-card">
           <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="review-text">"We love our PureVida water system!! The cold water is the perfect temperature and the hot water is instantly hot enough for teas, oatmeal, ramen. I am pregnant and I love all the added minerals I'm getting without even having to think about it! I have found myself drinking much more water than I did when we just had a Brita or tap water. Highly recommend!!!"</p>
-          <div class="review-author">— Paysten S.</div>
+          <div class="review-author">— Payten S.</div>
         </div>
         <div class="review-card">
           <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -1146,13 +1042,13 @@
           <div class="why-icon">
             <svg width="20" height="20" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18s-7-4.35-7-10A7 7 0 0117 8c0 5.65-7 10-7 10z"/><path d="M7 8l2 2 4-4"/></svg>
           </div>
-          Lifetime system warranties
+          Lifetime system warranty
         </div>
         <div class="why-item">
           <div class="why-icon">
             <svg width="20" height="20" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="M7 10h6m-3-3v6"/></svg>
           </div>
-          Financing available
+          Low monthly payment option
         </div>
         <div class="why-item">
           <div class="why-icon">
@@ -1179,6 +1075,7 @@
       <div class="video-wrapper" id="founderVideo">
         <iframe src="https://www.youtube.com/embed/Z9fCGCW4hBk" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;height:100%;position:absolute;top:0;left:0;"></iframe>
       </div>
+      <p class="video-tagline"><em>"Don't allow your body to be the filter"</em> — Let PureVida handle that for you!</p>
     </div>
   </section>
 
@@ -1188,13 +1085,6 @@
     <p>Schedule your free water quality test below.</p>
 
     <div class="form-card">
-      <div class="form-header">
-        <div class="form-header-icon">
-          <svg width="20" height="20" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l7-7 7 7"/><path d="M5 8v8a1 1 0 001 1h8a1 1 0 001-1V8"/></svg>
-        </div>
-        <h2>Tell Us About Your Home</h2>
-      </div>
-
       <form id="leadForm">
         <div class="form-row">
           <div class="form-group">
@@ -1233,8 +1123,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="concerns">What concerns do you have about your water? <span class="req">*</span></label>
-          <textarea id="concerns" name="concerns" placeholder="Hard water, chlorine taste, concerns about contaminants..." required></textarea>
+          <label for="concerns">What concerns do you have about your water?</label>
+          <textarea id="concerns" name="concerns" placeholder="Hard water, chlorine taste, concerns about contaminants..."></textarea>
         </div>
 
         <input type="hidden" id="utm_source" name="utm_source">
@@ -1306,6 +1196,22 @@
         if (field) field.value = val || sessionStorage.getItem(key) || '';
       });
     })();
+
+    // =========================================
+    // PHONE FORMATTING
+    // =========================================
+    document.getElementById('phone').addEventListener('input', function(e) {
+      var x = e.target.value.replace(/\D/g, '').substring(0, 10);
+      var formatted = '';
+      if (x.length > 6) {
+        formatted = '(' + x.substring(0,3) + ') ' + x.substring(3,6) + '-' + x.substring(6);
+      } else if (x.length > 3) {
+        formatted = '(' + x.substring(0,3) + ') ' + x.substring(3);
+      } else if (x.length > 0) {
+        formatted = '(' + x;
+      }
+      e.target.value = formatted;
+    });
 
     // =========================================
     // STICKY CTA
@@ -1416,6 +1322,38 @@
       });
     });
   </script>
+
+  <script>
+    function initAutocomplete() {
+      var input = document.getElementById('address');
+      var autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ['address'],
+        componentRestrictions: { country: 'us' }
+      });
+      autocomplete.setFields(['address_components']);
+      autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place.address_components) return;
+        var street = '';
+        var city = '';
+        var state = '';
+        var zip = '';
+        place.address_components.forEach(function(c) {
+          var t = c.types;
+          if (t.includes('street_number')) street = c.long_name + ' ';
+          if (t.includes('route')) street += c.long_name;
+          if (t.includes('locality')) city = c.long_name;
+          if (t.includes('administrative_area_level_1')) state = c.short_name;
+          if (t.includes('postal_code')) zip = c.long_name;
+        });
+        document.getElementById('address').value = street;
+        document.getElementById('city').value = city;
+        document.getElementById('state').value = state;
+        document.getElementById('zip').value = zip;
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_unuM7xQtsD_1rgcnLoab9wuum06QwEY&libraries=places&callback=initAutocomplete" async defer></script>
 
   <!--
   =====================================================
