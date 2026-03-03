@@ -14,6 +14,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6K4HNMZ0Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S6K4HNMZ0Y');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '826786543829137');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=826786543829137&ev=PageView&noscript=1"/></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1335,19 +1356,27 @@
       if (typeof gtag === 'function') {
         gtag('event', 'generate_lead', {
           event_category: 'form',
-          event_label: 'water_test_booking'
+          event_label: 'water_test_booking',
+          value: 5250,
+          currency: 'USD'
         });
       }
       if (typeof fbq === 'function') {
-        fbq('track', 'Lead', { content_name: 'water_test_booking' });
+        fbq('track', 'Lead', {
+          content_name: 'water_test_booking',
+          content_category: data.lead_source || 'machine',
+          value: 5250.00,
+          currency: 'USD'
+        });
       }
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'form_submission',
         form_name: 'water_test_booking',
-        lead_source: data.utm_source || 'direct',
-        lead_medium: data.utm_medium || 'none',
-        lead_campaign: data.utm_campaign || 'none'
+        lead_source: data.lead_source || 'machine',
+        utm_source: data.utm_source || 'direct',
+        utm_medium: data.utm_medium || 'none',
+        utm_campaign: data.utm_campaign || 'none'
       });
     }
 
@@ -1395,31 +1424,7 @@
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_unuM7xQtsD_1rgcnLoab9wuum06QwEY&libraries=places&callback=initAutocomplete" async defer></script>
 
-  <!--
-  =====================================================
-  ADD YOUR TRACKING PIXELS BELOW
-  =====================================================
-
-  GOOGLE ANALYTICS 4:
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  FACEBOOK PIXEL:
-  <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-    document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-  </script>
-  -->
+  <!-- GA4 and Meta Pixel are loaded in the <head> -->
 
 </body>
 </html>
