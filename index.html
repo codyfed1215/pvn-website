@@ -476,6 +476,56 @@
       color: var(--text-muted);
     }
 
+    /* ===== FEATURED TESTIMONIAL ===== */
+    .featured-testimonial {
+      background: var(--primary);
+      background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      color: #fff;
+    }
+    .featured-testimonial-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.3);
+      flex-shrink: 0;
+    }
+    .featured-testimonial-content {
+      flex: 1;
+    }
+    .featured-testimonial-stars {
+      color: #fbbf24;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .featured-testimonial-text {
+      font-size: 17px;
+      line-height: 1.75;
+      font-style: italic;
+      opacity: 0.95;
+      margin-bottom: 16px;
+    }
+    .featured-testimonial-author {
+      font-size: 15px;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+    @media (max-width: 639px) {
+      .featured-testimonial {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+        gap: 20px;
+      }
+      .featured-testimonial-text { font-size: 15px; }
+    }
+
     /* ===== SECTION 5 — WHY PUREVIDA ===== */
     .why { background: var(--body-bg); }
     .why-grid {
@@ -849,7 +899,7 @@
   <section class="hero">
     <div class="hero-badge">Limited Spots This Week</div>
     <h1>What's Really In Your <span class="city-name">Nashville</span> Home's Water?</h1>
-    <p class="hero-sub">Most Middle Tennessee homes have high hardness and chlorine levels.<br>In 20 minutes, we'll show you exactly what's in yours — and what it's doing to your plumbing, skin, and appliances.</p>
+    <p class="hero-sub">Most Middle Tennessee homes have high hardness and chlorine levels, along with many other contaminants.<br>In 20 minutes, we'll show you exactly what's in yours — and what it's doing to your plumbing, skin, and appliances.</p>
     <ul class="hero-checks">
       <li>
         <div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6L5 8.5L9.5 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -870,62 +920,41 @@
   <!-- SECTION 2 — THE PROBLEM -->
   <section class="section problem">
     <div class="section-inner">
-      <div class="text-center"><span class="section-badge">The Hidden Damage</span></div>
-      <h2 class="section-title">The Real Effects of Hardness and Chlorine in Your Water</h2>
-      <p class="problem-body">It slowly destroys your plumbing, shortens appliance lifespan, and increases energy bills — often without homeowners realizing it.</p>
+      <div class="text-center"><span class="section-badge">Your Family's Water</span></div>
+      <h2 class="section-title">Every Home's Water Is Different — Do You Know What's in Yours?</h2>
+      <p class="problem-body">Every home has its own water profile, and most families never think to test it — but your water touches everything your family drinks, cooks with, and bathes in.</p>
 
       <div class="damage-grid">
         <div class="damage-card">
           <div class="damage-card-placeholder">
-            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"/><path d="M16 20c2-4 6-6 8-6s6 2 8 6M16 28c2 4 6 6 8 6s6-2 8-6M12 24h24"/></svg>
+            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4C18 4 12 10 12 20c0 8 5 14 7 16h10c2-2 7-8 7-16C36 10 30 4 24 4z"/><path d="M20 38h8v4a4 4 0 01-8 0v-4z"/><path d="M18 22c2-4 4-6 6-6s4 2 6 6"/></svg>
           </div>
           <div class="damage-card-body">
-            <h4>Slowly Destroys Your Plumbing</h4>
-            <p>Mineral deposits build up inside your pipes, reducing water pressure and leading to costly repairs.</p>
+            <h4>What Your Family Drinks</h4>
+            <p>Chlorine, hard minerals, and other contaminants end up in every glass of water, pot of coffee, and meal you prepare — day after day.</p>
           </div>
         </div>
         <div class="damage-card">
           <div class="damage-card-placeholder">
-            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="6" width="24" height="36" rx="3"/><path d="M18 42v4m12-4v4M18 14h12M18 20h12"/><path d="M24 28l-3 5h6l-3 5"/></svg>
+            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="14" r="8"/><path d="M12 42c0-8 5-14 12-14s12 6 12 14"/><circle cx="16" cy="12" r="3"/><circle cx="32" cy="12" r="3"/></svg>
           </div>
           <div class="damage-card-body">
-            <h4>Shortens Appliance Lifespan</h4>
-            <p>Hard water can cut the life of your water heater, dishwasher, and washing machine nearly in half.</p>
+            <h4>What Touches Their Skin</h4>
+            <p>Hard water and chlorine strip moisture from skin and hair every time your family showers or bathes — especially tough on kids and sensitive skin.</p>
           </div>
         </div>
         <div class="damage-card">
           <div class="damage-card-placeholder">
-            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42V22l12-12 12 12v20"/><path d="M20 42V30h8v12"/><path d="M6 24l18-18 18 18"/><path d="M24 28l-3 5h6l-3 5"/></svg>
+            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 42V22l12-12 12 12v20"/><path d="M20 42V30h8v12"/><path d="M6 24l18-18 18 18"/></svg>
           </div>
           <div class="damage-card-body">
-            <h4>Increases Energy Bills</h4>
-            <p>Scale buildup forces your water heater to work harder, driving up your energy costs every month.</p>
+            <h4>What It Does to Your Home</h4>
+            <p>Hard water also quietly damages your pipes, shortens appliance life, and drives up energy bills over time.</p>
           </div>
         </div>
       </div>
 
-      <div class="damage-grid damage-grid-2" style="margin-top: 0; max-width: 600px; margin-left: auto; margin-right: auto; grid-template-columns: 1fr 1fr;">
-        <div class="damage-card">
-          <div class="damage-card-placeholder">
-            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8c-6 0-12 6-12 14 0 6 4 10 6 12h12c2-2 6-6 6-12 0-8-6-14-12-14z"/><path d="M20 38h8v4H20z"/><path d="M24 14v6m-4 2h8"/></svg>
-          </div>
-          <div class="damage-card-body">
-            <h4>Taste and Odor</h4>
-            <p>Chlorine and minerals affect the taste and smell of your drinking water, coffee, and cooking.</p>
-          </div>
-        </div>
-        <div class="damage-card">
-          <div class="damage-card-placeholder">
-            <svg width="48" height="48" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="8"/><path d="M12 42c0-8 5-14 12-14s12 6 12 14"/><path d="M18 20c-1 2-2 4-1 6m14-6c1 2 2 4 1 6"/></svg>
-          </div>
-          <div class="damage-card-body">
-            <h4>Dry Skin</h4>
-            <p>Hard water and chlorine strip natural oils from your skin and hair, leaving them dry and irritated.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="problem-warning">Most homeowners don't realize the damage until it's expensive.</div>
+      <div class="problem-warning">You wouldn't skip a home inspection — don't skip your water either.</div>
     </div>
   </section>
 
@@ -999,6 +1028,16 @@
       <div class="text-center"><span class="section-badge">Happy Families</span></div>
       <h2 class="section-title" style="margin-top: 8px;">What Our Customers Say</h2>
       <p class="section-sub">Don't just take our word for it.</p>
+
+      <div class="featured-testimonial">
+        <img src="bethany.jpg" alt="Bethany D." class="featured-testimonial-photo">
+        <div class="featured-testimonial-content">
+          <div class="featured-testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="featured-testimonial-text">"After my husband's cancer diagnosis, we got really serious about everything that goes in and on our bodies — especially water. With three small children, we knew clean, filtered water wasn't optional anymore. Choosing a whole-home system from PureVida was one of the best decisions we've made. My hair and skin are noticeably healthier, cooking tastes better, our clothes are softer — everything water touches in our home feels better. A complete game-changer for our family!"</p>
+          <div class="featured-testimonial-author">— Bethany D.</div>
+        </div>
+      </div>
+
       <div class="reviews">
         <div class="review-card">
           <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
