@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Water, Ice & Coffee Solutions | PureVida</title>
+  <meta name="description" content="Your trusted partner for workplace water, ice, and coffee solutions. 7-day free trial. Trusted by 720+ businesses nationwide.">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00bcd4;
+      --cyan-500: #0ea5e9;
+      --cyan-600: #0284c7;
+      --cyan-light: #00e5ff;
+      --blue-dark: #0a5c8a;
+      --blue-deeper: #064a73;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --gold: #f59e0b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 100;
+      padding: 0 40px;
+    }
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .nav-logo img {
+      height: 56px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gray-900);
+      font-weight: 700;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav-phone {
+      text-align: right;
+      text-decoration: none;
+      color: var(--gray-900);
+    }
+    .nav-phone-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-500);
+    }
+    .nav-phone-number {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-phone-number svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gray-500);
+      fill: none;
+      stroke-width: 2;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .nav-cta:hover {
+      background: var(--cyan-600);
+      transform: translateY(-1px);
+    }
+    .nav-learn-more {
+      font-size: 13px;
+      color: var(--cyan-500);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Mobile nav */
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-mobile-toggle svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gray-700);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #f0f7fc 0%, #e8f1f8 50%, #dde9f3 100%);
+      z-index: 0;
+    }
+    .hero-bg-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 55%;
+      background: linear-gradient(90deg, rgba(240,247,252,1) 0%, rgba(240,247,252,0.3) 30%, transparent 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      width: 100%;
+    }
+    .hero-text {
+      max-width: 560px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    .hero h1 .accent {
+      color: var(--cyan-500);
+      display: block;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 28px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .hero-cta:hover {
+      background: var(--cyan-600);
+      transform: translateY(-2px);
+    }
+    .hero-cta svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .hero-stat .number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--cyan-500);
+    }
+    .hero-stat .label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* Floating card */
+    .hero-float-card {
+      position: absolute;
+      right: 80px;
+      bottom: 100px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero-float-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .hero-float-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gray-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-float-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 2;
+    }
+    .hero-float-number {
+      font-size: 32px;
+      font-weight: 800;
+    }
+    .hero-float-label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* ===== SHARED SECTION ===== */
+    .section {
+      padding: 80px 40px;
+    }
+    .section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .section-badge {
+      display: inline-block;
+      background: rgba(14,165,233,0.08);
+      color: var(--cyan-500);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .section-title {
+      font-size: 40px;
+      font-weight: 800;
+      margin-top: 16px;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .section-title .accent {
+      color: var(--cyan-500);
+    }
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== TRUSTED BY ===== */
+    .trusted-by {
+      padding: 60px 40px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .trusted-by h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 36px;
+    }
+    .trusted-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .trusted-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--gray-300);
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+    .trusted-logo.walmart { color: #0071ce; }
+    .trusted-logo.wilson { color: #cc0000; }
+    .trusted-logo.wholefoods { color: #00674b; }
+    .trusted-logo.dicks { color: #00674b; }
+    .trusted-logo.firestone { color: #cc0000; }
+
+    /* ===== SOLUTIONS ===== */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .solution-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .solution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .solution-card-image {
+      height: 220px;
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .solution-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--cyan-500);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: -24px;
+      left: 24px;
+    }
+    .solution-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+    .solution-card-body {
+      padding: 36px 24px 24px;
+    }
+    .solution-card-body h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .solution-card-body p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .solution-card-body ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .solution-card-body li {
+      font-size: 14px;
+      color: var(--gray-600);
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .solution-card-body li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan-500);
+      flex-shrink: 0;
+    }
+    .solution-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--cyan-500);
+      text-decoration: none;
+    }
+    .solution-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* ===== IMPACT STATS ===== */
+    .impact {
+      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .impact-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 40px 28px;
+      text-align: center;
+    }
+    .impact-card-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--gray-100);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .impact-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .impact-card .number {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--cyan-500);
+      margin-bottom: 4px;
+    }
+    .impact-card .label-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .impact-card .label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 32px 28px;
+    }
+    .testimonial-quote-icon {
+      font-size: 40px;
+      color: var(--cyan-500);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--cyan-500);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .testimonial-name {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .testimonial-role {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .certs {
+      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .cert-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .cert-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gray-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .cert-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .cert-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+    .certs-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .certs-text strong {
+      color: var(--gray-700);
+    }
+    .certs-cta {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    /* ===== INDUSTRIES ===== */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .industry-card {
+      padding: 28px 24px;
+    }
+    .industry-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gray-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .industry-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .industry-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .industry-card .challenge-label,
+    .industry-card .solution-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+    .industry-card .challenge-label {
+      color: var(--cyan-500);
+    }
+    .industry-card .solution-label {
+      color: var(--cyan-500);
+      margin-top: 16px;
+    }
+    .industry-card .challenge-text,
+    .industry-card .solution-text {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works {
+      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step-item {
+      text-align: center;
+    }
+    .step-icon-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .step-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--white);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin: 0 auto;
+    }
+    .step-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .step-number {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 24px;
+      height: 24px;
+      background: var(--cyan-500);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-item h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .step-item p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* ===== FOUNDER ===== */
+    .founder-section {
+      padding: 80px 40px;
+    }
+    .founder-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .founder-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .founder-image {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 4/5;
+    }
+    .founder-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      font-size: 14px;
+    }
+    .founder-bio p {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .founder-linkedin {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      background: var(--gray-100);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .founder-linkedin svg {
+      width: 20px;
+      height: 20px;
+      fill: #0077b5;
+    }
+    .founder-quote {
+      max-width: 900px;
+      margin: 60px auto 0;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 48px 60px;
+    }
+    .founder-quote p {
+      font-size: 22px;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .founder-quote .signature {
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: var(--gray-400);
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      background: linear-gradient(135deg, #0a6e9e 0%, #0ea5e9 50%, #00e5ff 100%);
+      padding: 100px 40px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.1) 100%);
+    }
+    .final-cta-content {
+      position: relative;
+      z-index: 1;
+    }
+    .final-cta .promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .final-cta h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    .final-cta h2 .light {
+      color: rgba(255,255,255,0.7);
+    }
+    .final-cta .sub {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 36px;
+    }
+    .final-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--cyan-500);
+      padding: 18px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .final-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    .final-cta-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .final-cta-checks {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+      list-style: none;
+    }
+    .final-cta-checks li {
+      font-size: 14px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .final-cta-checks li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: linear-gradient(135deg, #0a6e9e 0%, #0ea5e9 100%);
+      color: var(--white);
+      padding: 60px 40px 32px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      opacity: 0.7;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+    .footer-brand img {
+      height: 48px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-col h4 svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover {
+      color: var(--white);
+    }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-contact-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: rgba(255,255,255,0.7);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .footer-contact-item a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.15s;
+    }
+    .footer-social a:hover { opacity: 0.8; }
+    .footer-social a.instagram { background: #e4405f; }
+    .footer-social a.linkedin { background: #0077b5; }
+    .footer-social a.facebook { background: #1877f2; }
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+    .footer-cta-col .get-started-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 8px;
+      transition: background 0.15s;
+    }
+    .footer-cta-col .get-started-btn:hover {
+      background: var(--cyan-600);
+    }
+    .footer-cta-col .get-started-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-bottom-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+
+    /* ===== BUTTON SHARED ===== */
+    .btn-cyan {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-cyan:hover {
+      background: var(--cyan-600);
+      transform: translateY(-1px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 36px; }
+      .hero-float-card { display: none; }
+      .solutions-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: repeat(3, 1fr); }
+      .industries-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .founder-content { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-inner { height: 64px; }
+      .nav-links, .nav-learn-more { display: none; }
+      .nav-phone { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .nav-logo img { height: 44px; }
+
+      .section { padding: 56px 20px; }
+      .section-title { font-size: 28px; }
+      .section-sub { font-size: 15px; }
+
+      .hero { min-height: auto; }
+      .hero-content { padding: 48px 20px; }
+      .hero h1 { font-size: 30px; }
+      .hero-stats { flex-direction: column; gap: 16px; }
+
+      .trusted-by { padding: 40px 20px; }
+      .trusted-logos { gap: 24px; }
+
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .founder-quote { padding: 32px 24px; }
+      .founder-quote p { font-size: 18px; }
+
+      .final-cta { padding: 60px 20px; }
+      .final-cta h2 { font-size: 30px; }
+      .final-cta-checks { flex-direction: column; align-items: center; gap: 12px; }
+
+      .footer { padding: 40px 20px 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../logo.png" alt="PureVida">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Welcome</a></li>
+        <li><a href="/commercial/" class="active">Commercial</a></li>
+        <li><a href="/residential/">Residential</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:6157037025" class="nav-phone">
+          <div class="nav-phone-label">Have Questions?</div>
+          <div class="nav-phone-number">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            615-703-7025
+          </div>
+        </a>
+        <a href="#get-started" class="nav-cta">Schedule My 7-Day Free Trial</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Your Trusted Partner for a Better Workplace <span class="accent">Water. Ice. Coffee.</span></h1>
+        <a href="#get-started" class="hero-cta">
+          Schedule My 7-Day Free Trial
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">720+</div>
+            <div class="label">Happy Clients</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">50K+</div>
+            <div class="label">Plastic Bottles Saved</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">7 Days</div>
+            <div class="label">Free Trial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-float-card">
+      <div class="hero-float-badge">Trusted by Businesses Nationwide</div>
+      <div class="hero-float-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="hero-float-number">720+</div>
+        <div class="hero-float-label">Happy Clients</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUSTED BY ===== -->
+  <section class="trusted-by">
+    <h2>Trusted By</h2>
+    <div class="trusted-logos">
+      <div class="trusted-logo walmart">Walmart</div>
+      <div class="trusted-logo wilson">Wilson</div>
+      <div class="trusted-logo wholefoods">Whole Foods</div>
+      <div class="trusted-logo dicks">DICK'S</div>
+      <div class="trusted-logo firestone">Firestone</div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTIONS ===== -->
+  <section class="section" id="solutions">
+    <div class="section-inner text-center">
+      <span class="section-badge">Our Solutions</span>
+      <h2 class="section-title">Complete Beverage Solutions</h2>
+      <p class="section-sub mx-auto">From pure water to premium coffee, we provide sustainable solutions that eliminate plastic waste and enhance your workplace.</p>
+
+      <div class="solutions-grid">
+        <!-- Ice & Water -->
+        <div class="solution-card">
+          <div class="solution-card-image">
+            <div class="solution-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 17.58A5 5 0 0018 8h-1.26A8 8 0 104 16.25"/><path d="M8 16h.01M8 20h.01M12 18h.01M12 22h.01M16 16h.01M16 20h.01"/></svg>
+            </div>
+          </div>
+          <div class="solution-card-body">
+            <h3>Ice & Water Systems</h3>
+            <p>Commercial ice machines built for demanding environments with consistent output.</p>
+            <ul>
+              <li>High-capacity ice production</li>
+              <li>Perfect for healthcare, hospitality & manufacturing</li>
+              <li>Crystal-clear quality</li>
+            </ul>
+            <a href="#" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Water Systems -->
+        <div class="solution-card">
+          <div class="solution-card-image">
+            <div class="solution-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            </div>
+          </div>
+          <div class="solution-card-body">
+            <h3>Water Systems</h3>
+            <p>Enterprise-grade water dispensers delivering pure, great-tasting water throughout your facility.</p>
+            <ul>
+              <li>Hot, Cold & Ambient</li>
+              <li>Advanced filtration</li>
+              <li>Ideal for offices and homes</li>
+            </ul>
+            <a href="#" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Coffee Systems -->
+        <div class="solution-card">
+          <div class="solution-card-image">
+            <div class="solution-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+            </div>
+          </div>
+          <div class="solution-card-body">
+            <h3>Coffee Systems</h3>
+            <p>Keep your team energized with premium coffee systems that integrate with your water supply.</p>
+            <ul>
+              <li>Premium office & home coffee</li>
+              <li>Simple setup and support</li>
+              <li>Bean-to-cup freshness</li>
+            </ul>
+            <a href="#" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEASURABLE IMPACT ===== -->
+  <section class="section impact">
+    <div class="section-inner text-center">
+      <span class="section-badge">Results</span>
+      <h2 class="section-title">Measurable Impact</h2>
+      <p class="section-sub mx-auto">See the measurable impact of switching to sustainable hydration.</p>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+          </div>
+          <div class="number">85%</div>
+          <div class="label-title">Less Plastic Waste</div>
+          <div class="label">Average reduction in single-use bottles</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="number">100%</div>
+          <div class="label-title">Cleaner Spaces</div>
+          <div class="label">No more bottle storage clutter</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+          </div>
+          <div class="number">40%</div>
+          <div class="label-title">Cost Savings</div>
+          <div class="label">Compared to bottled water delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section">
+    <div class="section-inner text-center">
+      <span class="section-badge">Client Success Stories</span>
+      <h2 class="section-title">Trusted by Industry Leaders</h2>
+      <p class="section-sub mx-auto">See why hundreds of organizations have made the switch to sustainable hydration.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"Switching to PureVida was one of the best decisions we made. Our team loves the quality of water, and we've significantly reduced our plastic waste. The system pays for itself."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div>
+              <div class="testimonial-name">Sarah Mitchell</div>
+              <div class="testimonial-role">Office Manager, TechFlow Solutions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"The ice machine has been a game-changer for our bar. Crystal clear ice that elevates our cocktails. The service team is incredibly responsive when we need support."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DC</div>
+            <div>
+              <div class="testimonial-name">David Chen</div>
+              <div class="testimonial-role">Restaurant Owner, Pacific Bistro</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"In healthcare, water quality is paramount. PureVida delivers consistently pure water that meets our high standards. Patients and staff notice the difference."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JA</div>
+            <div>
+              <div class="testimonial-name">Jennifer Adams</div>
+              <div class="testimonial-role">Facility Director, Wellness Medical Center</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"Our members expect premium amenities. PureVida's systems look great on the floor and the water quality keeps everyone hydrated during intense workouts."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MR</div>
+            <div>
+              <div class="testimonial-name">Marcus Rivera</div>
+              <div class="testimonial-role">Operations Manager, Summit Fitness</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"We needed a solution that aligned with our environmental goals. PureVida helped us eliminate thousands of plastic bottles while improving employee satisfaction."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AF</div>
+            <div>
+              <div class="testimonial-name">Amanda Foster</div>
+              <div class="testimonial-role">Sustainability Lead, GreenTech Industries</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"Guest feedback has been overwhelmingly positive. The water stations add a touch of elegance to our lobby while supporting our sustainability initiatives."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RK</div>
+            <div>
+              <div class="testimonial-name">Robert Kim</div>
+              <div class="testimonial-role">Hotel General Manager, The Grand Meridian</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="section certs">
+    <div class="section-inner text-center">
+      <span class="section-badge">Trusted Quality</span>
+      <h2 class="section-title">100% Certified For Your <span class="accent">Peace Of Mind</span></h2>
+
+      <div class="certs-grid">
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="cert-label">Made in USA</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="cert-label">NSF Certified</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="cert-label">Top Rated</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+          <div class="cert-label">Quality Certified</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="cert-label">Industry Approved</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg></div>
+          <div class="cert-label">Eco-Friendly</div>
+        </div>
+      </div>
+
+      <p class="certs-text">Concerned that your facility's water may contain contaminants like chlorine, fluoride, or microorganisms? Dealing with scale buildup that damages equipment, impacts taste, or increases maintenance costs? Or noticing water spots and residue that affect cleanliness and presentation in your workplace?</p>
+      <p class="certs-text"><strong>Schedule Your 7-Day Free Trial</strong> with our experienced commercial water specialists.</p>
+      <p class="certs-text">We'll conduct a comprehensive analysis of your water quality, identify operational risks, and recommend the most effective solutions for your facility, usage demands, and budget. From commercial-grade water conditioning and softening systems to advanced drinking water, ice, and specialty filtration solutions — we provide <strong>premium systems engineered to deliver consistent, clean, great-tasting water that protects your equipment, enhances your operations, and supports your team.</strong></p>
+
+      <div class="certs-cta">
+        <a href="#get-started" class="btn-cyan">Schedule My 7-Day Free Trial</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRY SOLUTIONS ===== -->
+  <section class="section">
+    <div class="section-inner text-center">
+      <span class="section-badge">Industry Solutions</span>
+      <h2 class="section-title">Trusted Across <span class="accent">Every Industry</span></h2>
+      <p class="section-sub mx-auto">From corporate offices to manufacturing floors, we deliver tailored hydration solutions that solve real problems for real businesses.</p>
+
+      <div class="industries-grid" style="text-align: left;">
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M9 21V17h6v4M12 3l9 4M12 3L3 7"/></svg></div>
+          <h3>Offices & Corporate</h3>
+          <div class="challenge-label">The Challenge</div>
+          <p class="challenge-text">Employees waste time on bottle deliveries and storage takes up valuable space.</p>
+          <div class="solution-label">Our Solution</div>
+          <p class="solution-text">Unlimited fresh water on demand with zero storage footprint and no delivery disruptions.</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+          <h3>Gyms & Fitness</h3>
+          <div class="challenge-label">The Challenge</div>
+          <p class="challenge-text">High water demand during peak hours and members expect premium amenities.</p>
+          <div class="solution-label">Our Solution</div>
+          <p class="solution-text">High-capacity systems that keep up with demand while elevating your facility's image.</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <h3>Medical & Healthcare</h3>
+          <div class="challenge-label">The Challenge</div>
+          <p class="challenge-text">Strict hygiene requirements and need for consistent, safe water quality.</p>
+          <div class="solution-label">Our Solution</div>
+          <p class="solution-text">Medical-grade filtration with touchless dispensing and regular sanitization protocols.</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+          <h3>Schools & Universities</h3>
+          <div class="challenge-label">The Challenge</div>
+          <p class="challenge-text">Limited budgets, high usage, and growing sustainability requirements.</p>
+          <div class="solution-label">Our Solution</div>
+          <p class="solution-text">Cost-effective systems that support green initiatives and handle campus-wide demand.</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+          <h3>Manufacturing & Warehouses</h3>
+          <div class="challenge-label">The Challenge</div>
+          <p class="challenge-text">Workers need reliable hydration across large facilities in demanding conditions.</p>
+          <div class="solution-label">Our Solution</div>
+          <p class="solution-text">Durable, high-volume systems strategically placed throughout your operation.</p>
+        </div>
+
+        <div class="industry-card">
+          <div class="industry-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg></div>
+          <h3>Hospitality & Hotels</h3>
+          <div class="challenge-label">The Challenge</div>
+          <p class="challenge-text">Guest expectations are high and bottled water costs add up quickly.</p>
+          <div class="solution-label">Our Solution</div>
+          <p class="solution-text">Premium water stations that impress guests while cutting operational costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-it-works">
+    <div class="section-inner text-center">
+      <span class="section-badge">How It Works</span>
+      <h2 class="section-title">From Consultation to Installation</h2>
+      <p class="section-sub mx-auto">Our team handles everything so you can focus on running your business.</p>
+
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="step-number">01</div>
+          </div>
+          <h3>Site Assessment</h3>
+          <p>We evaluate your facility, water usage, and employee count to recommend the optimal solution.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><path d="M16 8h4l3 3v5a2 2 0 01-2 2h-5"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="step-number">02</div>
+          </div>
+          <h3>Professional Delivery</h3>
+          <p>Commercial-grade equipment delivered and staged at your location on your schedule.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <div class="step-number">03</div>
+          </div>
+          <h3>Expert Installation</h3>
+          <p>Certified technicians handle plumbing, electrical, and setup with minimal business disruption.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+            </div>
+            <div class="step-number">04</div>
+          </div>
+          <h3>Ongoing Support</h3>
+          <p>Full support, scheduled maintenance, and filter replacements included in your service plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="founder-section">
+    <div class="founder-inner text-center">
+      <span class="section-badge">A Message From the Founder</span>
+      <h2 class="section-title">About the Founder — <span class="accent">Russell Fedell</span></h2>
+
+      <div class="founder-content" style="text-align: left;">
+        <div class="founder-image">
+          <img src="../founders.jpg" alt="Russell Fedell and family" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="founder-bio">
+          <p>At PureVida, we believe water is more than a utility — it's infrastructure.</p>
+          <p>Businesses depend on consistency, reliability, and performance in every part of their operation. Yet water — one of the most essential inputs for employees, customers, equipment, and daily processes — is often overlooked. That gap is where PureVida was built.</p>
+          <p>I founded PureVida to raise the standard for commercial water, ice, and beverage systems. Our mission is simple: deliver premium, reliable hydration solutions that improve operational efficiency, employee experience, and long-term cost control — without compromising sustainability or quality.</p>
+          <p>We partner with organizations that care about performance and reputation — offices, healthcare facilities, fitness centers, schools, and manufacturing environments — providing systems that are engineered to scale, easy to maintain, and designed for real-world use.</p>
+          <p>PureVida is not about selling equipment. It's about delivering better water quality, lower waste, and a better experience for the people who rely on your business every day.</p>
+          <p>Thank you for considering PureVida as your trusted water partner. We look forward to helping your organization operate better — starting with the water that fuels it.</p>
+          <a href="#" class="founder-linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="founder-quote">
+        <p>"Great companies obsess over the details others overlook. Clean, reliable water is one of those details that quietly drives performance."</p>
+        <div class="signature">Russell Fedell</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta" id="get-started">
+    <div class="final-cta-content">
+      <div class="promo-badge">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Limited Time: Free Installation
+      </div>
+      <h2>Upgrade Your Water<br><span class="light">Experience Today.</span></h2>
+      <p class="sub">Cleaner. Smarter. More sustainable hydration — without the hassle.</p>
+      <a href="#get-started" class="final-cta-btn">
+        Schedule My 7-Day Free Trial
+        <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <ul class="final-cta-checks">
+        <li>Purest water possible</li>
+        <li>Fixed cost — drink all you want</li>
+        <li>Free 7-day trial</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../logo.png" alt="PureVida">
+          <p>Sustainable hydration solutions for businesses and homes. Pure water, zero bottles.</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.15); margin-top: 20px; padding-top: 16px;">
+            <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Social Media</h4>
+            <div class="footer-social">
+              <a href="#" class="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+              <a href="#" class="linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+              <a href="#" class="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Contact
+          </h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:6157037025">(615) 703-7025</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <a href="mailto:contact@purevida.co">contact@purevida.co</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>1033 Demonbreun St.<br>Suite 300<br>Nashville, TN 37203</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>M-F 8am-5pm CST</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <a href="https://purevida.co">PureVida.Co</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M12 3l9 4M12 3L3 7"/></svg>
+            Commercial
+          </h4>
+          <ul>
+            <li><a href="#trusted">Trusted By</a></li>
+            <li><a href="#solutions">Our Solutions</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#testimonials">Success Stories</a></li>
+            <li><a href="#quality">Trusted Quality</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#founder">About the Founder</a></li>
+            <li><a href="#get-started">Get Started</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+            Residential
+          </h4>
+          <ul>
+            <li><a href="/residential/">Residential Solutions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-cta-col">
+          <h4>Get Started</h4>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:16px;">Ready to upgrade your water experience? Let's talk.</p>
+          <a href="#get-started" class="get-started-btn">
+            Get Started
+            <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div style="border-top:1px solid rgba(255,255,255,0.15);margin-top:24px;padding-top:16px;">
+            <a href="#" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;display:block;margin-bottom:8px;">Privacy Policy</a>
+            <a href="#" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;">Terms</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 PureVida. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

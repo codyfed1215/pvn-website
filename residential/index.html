@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Residential Water Solutions | PureVida Home</title>
+  <meta name="description" content="Pure, clean, safe water for your family and home. Whole home water treatment, reverse osmosis, and air purification. Free water assessment.">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00bcd4;
+      --cyan-500: #0ea5e9;
+      --cyan-600: #0284c7;
+      --cyan-light: #00e5ff;
+      --blue-dark: #0a5c8a;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+      --gold: #f59e0b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 100;
+      padding: 0 40px;
+    }
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 56px;
+      width: auto;
+    }
+    .nav-logo-text {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--cyan-500);
+      line-height: 1.1;
+    }
+    .nav-logo-text span {
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gray-900);
+      font-weight: 700;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav-phone {
+      text-align: right;
+      text-decoration: none;
+      color: var(--gray-900);
+    }
+    .nav-phone-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-500);
+    }
+    .nav-phone-number {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-phone-number svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gray-500);
+      fill: none;
+      stroke-width: 2;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .nav-cta:hover {
+      background: var(--cyan-600);
+      transform: translateY(-1px);
+    }
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-mobile-toggle svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--gray-700);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #e8f1f8 0%, #dde9f3 50%, #d0e1ed 100%);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 40px;
+      max-width: 900px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .hero h1 .accent {
+      color: var(--cyan-light);
+    }
+
+    /* Floating card */
+    .hero-float-card {
+      position: absolute;
+      right: 25%;
+      bottom: 80px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero-float-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .hero-float-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(14,165,233,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-float-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 2;
+    }
+    .hero-float-number {
+      font-size: 32px;
+      font-weight: 800;
+    }
+    .hero-float-label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      padding: 40px 40px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .trust-bar-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .trust-item-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gray-100);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-item-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gray-600);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .trust-item-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gray-700);
+      max-width: 120px;
+      line-height: 1.3;
+    }
+    .trust-cta {
+      text-align: center;
+    }
+
+    /* ===== SHARED ===== */
+    .section {
+      padding: 80px 40px;
+    }
+    .section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .section-badge {
+      display: inline-block;
+      background: rgba(14,165,233,0.08);
+      color: var(--cyan-500);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .section-title {
+      font-size: 40px;
+      font-weight: 800;
+      margin-top: 16px;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .section-title .accent { color: var(--cyan-500); }
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    .btn-cyan {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-cyan:hover {
+      background: var(--cyan-600);
+      transform: translateY(-1px);
+    }
+    .btn-cyan svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* ===== SOLUTIONS ===== */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .solution-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .solution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .solution-card-image {
+      height: 220px;
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      position: relative;
+    }
+    .solution-card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--cyan-500);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: -24px;
+      left: 24px;
+    }
+    .solution-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+    }
+    .solution-card-body {
+      padding: 36px 24px 24px;
+    }
+    .solution-card-body h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .solution-card-body > p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .solution-card-body ul {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .solution-card-body li {
+      font-size: 14px;
+      color: var(--gray-600);
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .solution-card-body li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan-500);
+      flex-shrink: 0;
+    }
+    .solution-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--cyan-500);
+      text-decoration: none;
+    }
+    .solution-card-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    /* ===== IMPACT ===== */
+    .impact {
+      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .impact-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 40px 28px;
+      text-align: center;
+    }
+    .impact-card-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--gray-100);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .impact-card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .impact-card .number {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--cyan-500);
+      margin-bottom: 4px;
+    }
+    .impact-card .label-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .impact-card .label {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 32px 28px;
+    }
+    .testimonial-quote-icon {
+      font-size: 40px;
+      color: var(--cyan-500);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .testimonial-text {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .testimonial-stars {
+      color: var(--gold);
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--cyan-500);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .testimonial-name {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .testimonial-role {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* ===== CERTIFICATIONS ===== */
+    .certs {
+      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .cert-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .cert-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gray-100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+    .cert-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .cert-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+    .certs-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .certs-text strong {
+      color: var(--gray-700);
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works {
+      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step-item { text-align: center; }
+    .step-icon-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .step-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--white);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin: 0 auto;
+    }
+    .step-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--cyan-500);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .step-number {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 24px;
+      height: 24px;
+      background: var(--cyan-500);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-item h3 {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .step-item p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* ===== FOUNDER ===== */
+    .founder-section { padding: 80px 40px; }
+    .founder-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .founder-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .founder-image {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--gray-100);
+      aspect-ratio: 4/5;
+    }
+    .founder-image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-500);
+      font-size: 14px;
+    }
+    .founder-bio p {
+      font-size: 16px;
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .founder-quote {
+      max-width: 900px;
+      margin: 60px auto 0;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 48px 60px;
+    }
+    .founder-quote p {
+      font-size: 22px;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .founder-quote .signature {
+      font-family: 'Georgia', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: var(--gray-400);
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      padding: 40px;
+    }
+    .final-cta-card {
+      max-width: 1240px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #0a6e9e 0%, #0ea5e9 50%, #00e5ff 100%);
+      border-radius: 28px;
+      padding: 80px 40px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.08) 100%);
+    }
+    .final-cta-content {
+      position: relative;
+      z-index: 1;
+    }
+    .final-cta .promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+    .final-cta h2 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+    .final-cta h2 .light {
+      color: rgba(255,255,255,0.6);
+      display: block;
+    }
+    .final-cta .sub {
+      font-size: 18px;
+      opacity: 0.85;
+      margin-bottom: 36px;
+    }
+    .final-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--cyan-500);
+      padding: 18px 44px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .final-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    .final-cta-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .final-cta-checks {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+      list-style: none;
+    }
+    .final-cta-checks li {
+      font-size: 14px;
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .final-cta-checks li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: linear-gradient(135deg, #0a6e9e 0%, #0ea5e9 100%);
+      color: var(--white);
+      padding: 60px 40px 32px;
+    }
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      opacity: 0.7;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+    .footer-brand img { height: 48px; }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-col h4 svg {
+      width: 16px; height: 16px;
+      stroke: currentColor; fill: none; stroke-width: 2;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-contact-item svg {
+      width: 16px; height: 16px;
+      stroke: rgba(255,255,255,0.7);
+      fill: none; stroke-width: 2;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .footer-contact-item a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-social a.instagram { background: #e4405f; }
+    .footer-social a.linkedin { background: #0077b5; }
+    .footer-social a.facebook { background: #1877f2; }
+    .footer-social svg { width: 18px; height: 18px; fill: white; }
+    .footer-cta-col .get-started-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-500);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .footer-cta-col .get-started-btn svg {
+      width: 16px; height: 16px;
+      stroke: currentColor; fill: none; stroke-width: 2.5;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 24px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 38px; }
+      .hero-float-card { display: none; }
+      .solutions-grid, .impact-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: repeat(3, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .founder-content { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .trust-items { gap: 20px; }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .nav-inner { height: 64px; }
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .nav-logo img { height: 44px; }
+
+      .section { padding: 56px 20px; }
+      .section-title { font-size: 28px; }
+      .section-sub { font-size: 15px; }
+
+      .hero { min-height: auto; }
+      .hero-content { padding: 48px 20px; }
+      .hero h1 { font-size: 30px; }
+
+      .trust-bar { padding: 28px 20px; }
+      .trust-items { flex-direction: column; align-items: flex-start; gap: 16px; }
+
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+
+      .final-cta { padding: 20px; }
+      .final-cta-card { padding: 48px 20px; border-radius: 20px; }
+      .final-cta h2 { font-size: 30px; }
+      .final-cta-checks { flex-direction: column; align-items: center; gap: 12px; }
+
+      .founder-section { padding: 56px 20px; }
+      .founder-quote { padding: 32px 24px; }
+      .founder-quote p { font-size: 18px; }
+
+      .footer { padding: 40px 20px 24px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../logo.png" alt="PureVida Home">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Welcome</a></li>
+        <li><a href="/commercial/">Commercial</a></li>
+        <li><a href="/residential/" class="active">Residential</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:6157037025" class="nav-phone">
+          <div class="nav-phone-label">Have Questions?</div>
+          <div class="nav-phone-number">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            615-703-7025
+          </div>
+        </a>
+        <a href="#get-started" class="nav-cta">Free Water Assessment</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Pure, Clean, Safe Water for <span class="accent">Your Family and Home</span></h1>
+    </div>
+    <div class="hero-float-card">
+      <div class="hero-float-badge">Serving in 2026</div>
+      <div class="hero-float-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div>
+        <div class="hero-float-number">500+</div>
+        <div class="hero-float-label">Happy Families</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-items">
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="trust-item-text">99% Client Satisfaction</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="trust-item-text">Industry Leading Lifetime Warranty</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="trust-item-text">Family Owned and Operated</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a2 2 0 01-2 2h-5"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="trust-item-text">Rapid Response Services</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="trust-item-text">Financing Available</div>
+        </div>
+      </div>
+      <div class="trust-cta">
+        <a href="#get-started" class="btn-cyan">
+          Schedule My Free Water Assessment
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTIONS ===== -->
+  <section class="section">
+    <div class="section-inner text-center">
+      <span class="section-badge">Our Solutions</span>
+      <h2 class="section-title">Systems for Your Home</h2>
+      <p class="section-sub mx-auto">Tailor-Made Solutions Designed To Fit Seamlessly Into Your Family's Lifestyle</p>
+
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <div class="solution-card-image">
+            <div class="solution-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+          </div>
+          <div class="solution-card-body">
+            <h3>Whole Home Water Treatment</h3>
+            <p>Complete water treatment for your entire home. Protect your family, appliances, and plumbing from hard water damage.</p>
+            <ul>
+              <li>Removes Hard Water</li>
+              <li>Protects Appliances</li>
+              <li>Softer Skin & Hair</li>
+            </ul>
+            <a href="#" class="solution-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card-image">
+            <div class="solution-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            </div>
+          </div>
+          <div class="solution-card-body">
+            <h3>Reverse Osmosis Drinking Water</h3>
+            <p>Five stages of advanced treatment including reverse osmosis technology for pure, fresh water on demand.</p>
+            <ul>
+              <li>5-Stage Filtration</li>
+              <li>Removes 99% of Contaminants</li>
+              <li>Great Tasting Water</li>
+            </ul>
+            <a href="#" class="solution-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card-image">
+            <div class="solution-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+          </div>
+          <div class="solution-card-body">
+            <h3>Air Purification</h3>
+            <p>Hospital-grade air purification trusted by medical facilities. Eliminate viruses, mold, bacteria, and allergens from your home.</p>
+            <ul>
+              <li>9-Stage DFS Technology</li>
+              <li>Removes 99.99% of particles</li>
+              <li>Whole-home coverage</li>
+            </ul>
+            <a href="#" class="solution-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section class="section impact">
+    <div class="section-inner text-center">
+      <span class="section-badge">Results</span>
+      <h2 class="section-title">Real Results for Your Home</h2>
+      <p class="section-sub mx-auto">See the difference pure water makes for your family and home.</p>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="number">40%</div>
+          <div class="label-title">Longer Lifespan</div>
+          <div class="label">Your water-using appliances will last longer</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div class="number">70%</div>
+          <div class="label-title">Less Products</div>
+          <div class="label">Soaps, detergents & cleaning products</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="number">$1000s</div>
+          <div class="label-title">In Savings</div>
+          <div class="label">Never buy bottled water again</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section">
+    <div class="section-inner text-center">
+      <span class="section-badge">Happy Families</span>
+      <h2 class="section-title">Loved by Families Everywhere</h2>
+      <p class="section-sub mx-auto">See why thousands of homes have switched to PureVida for their pure water needs.</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"My kids actually drink more water now! The water tastes so much better than what we were getting from bottles. Plus, no more heavy grocery runs for water."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">ER</div>
+            <div><div class="testimonial-name">Emily R.</div><div class="testimonial-role">Mother of 3, Nashville, TN</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"Installation was quick and easy. The system looks sleek in our kitchen, and the water quality is amazing. Best home improvement we've made this year."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MT</div>
+            <div><div class="testimonial-name">Michael T.</div><div class="testimonial-role">Homeowner, Franklin, TN</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"As someone who tracks my water intake, having pure, great-tasting water available all day has made staying hydrated effortless. I feel the difference."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LP</div>
+            <div><div class="testimonial-name">Lisa P.</div><div class="testimonial-role">Health Enthusiast, Murfreesboro, TN</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"As a dad, protecting my family matters to me. Clean water isn't something I want to question. This system gives me confidence we're doing the right thing for our home."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JD</div>
+            <div><div class="testimonial-name">Jordan D.</div><div class="testimonial-role">Father and Husband, Brentwood, TN</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"As a mom of three, I'm thankful for anything that helps me care for my kids well. The water tastes great, my kids drink more of it, and I have peace knowing we're taking good care of our family. Love it!"</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">BD</div>
+            <div><div class="testimonial-name">Bethany D.</div><div class="testimonial-role">Stay-at-home Mom, Bellevue, TN</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">"At my age, water quality matters for health. The peace of mind knowing every glass is pure is priceless. Service has been exceptional too."</p>
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DL</div>
+            <div><div class="testimonial-name">David L.</div><div class="testimonial-role">Retiree, Clarksville, TN</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="section certs">
+    <div class="section-inner text-center">
+      <span class="section-badge">Trusted Quality</span>
+      <h2 class="section-title">100% Certified For Your <span class="accent">Peace Of Mind</span></h2>
+
+      <div class="certs-grid">
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="cert-label">Made in USA</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="cert-label">NSF Certified</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="cert-label">Top Rated</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+          <div class="cert-label">Quality Certified</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div class="cert-label">Industry Approved</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-icon"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg></div>
+          <div class="cert-label">Eco-Friendly</div>
+        </div>
+      </div>
+
+      <p class="certs-text">Worried your water may contain harmful contaminants like chlorine, fluoride, or microorganisms? Frustrated by stubborn water spots on your showers and sinks? Or concerned that limescale buildup is shortening the life of your appliances?</p>
+      <p class="certs-text"><strong>Schedule a Free Water Assessment</strong> with our experienced technicians.</p>
+      <p class="certs-text">We'll perform a comprehensive evaluation of your water quality, identify potential risks, and walk you through the best solutions for your home, lifestyle, and budget. From whole-home water conditioners and softeners to advanced drinking water and well water filtration systems — whatever your needs, we have a <strong>premium solution designed to deliver the cleanest, purest water your family has ever enjoyed.</strong></p>
+
+      <div style="margin-top:32px;">
+        <a href="#get-started" class="btn-cyan">Schedule My Free Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-it-works">
+    <div class="section-inner text-center">
+      <span class="section-badge">How It Works</span>
+      <h2 class="section-title">Easy Installation Process</h2>
+      <p class="section-sub mx-auto">We make getting pure water at home simple and hassle-free.</p>
+
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <div class="step-number">01</div>
+          </div>
+          <h3>Schedule a Call</h3>
+          <p>A quick consultation to understand your home's needs and recommend the best system for your family.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5a2 2 0 01-2 2h-5"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="step-number">02</div>
+          </div>
+          <h3>Fast Delivery</h3>
+          <p>Your system arrives within days, with all components ready for installation.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="step-number">03</div>
+          </div>
+          <h3>Quick Setup</h3>
+          <p>Professional installation. No mess, no stress, just pure water.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+            </div>
+            <div class="step-number">04</div>
+          </div>
+          <h3>Always Here</h3>
+          <p>Friendly customer support, filter change reminders, and annual maintenance available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="founder-section">
+    <div class="founder-inner text-center">
+      <span class="section-badge">About the Founder</span>
+      <h2 class="section-title">Meet Russell Fedell — <span class="accent">Founder of PureVida</span></h2>
+
+      <div class="founder-content" style="text-align: left;">
+        <div class="founder-image">
+          <img src="../founders.jpg" alt="Russell Fedell and family" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="founder-bio">
+          <p>Russell Fedell is the founder of PureVida, a company built on the belief that what we consume every day should protect our health, our families, and our future.</p>
+          <p>With years of experience in business leadership and operations, Russell has dedicated his career to creating premium water and hydration solutions that are reliable, sustainable, and designed for real life — homes, families, and workplaces alike.</p>
+          <p>At the core of everything Russell builds is family. He is a devoted husband and a proud father of three boys, and that role shapes every decision he makes. As a parent, Russell understands that clean water isn't just a convenience — it's a responsibility. It's about protecting children, supporting healthy development, and creating a safe foundation for everyday living.</p>
+          <p>Through PureVida, Russell brings together innovation, integrity, and long-term thinking — delivering systems that improve health, reduce waste, and elevate the quality of life for families and businesses. His leadership blends practical execution with a deeply personal mission: to leave the world — and its water — better than he found it.</p>
+        </div>
+      </div>
+
+      <div class="founder-quote">
+        <p>"Every family deserves water they can trust. That's not just our mission — it's my promise as a father."</p>
+        <div class="signature">Russell Fedell</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta" id="get-started">
+    <div class="final-cta-card">
+      <div class="final-cta-content">
+        <div class="promo-badge">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Limited Time: Free Installation
+        </div>
+        <h2>Pure Water for<br><span class="light">Your Family.</span></h2>
+        <p class="sub">Healthier water. Longer-lasting appliances — peace of mind.</p>
+        <a href="#get-started" class="final-cta-btn">
+          Schedule My Free Water Assessment
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <ul class="final-cta-checks">
+          <li>Purest water possible</li>
+          <li>Fixed cost — drink all you want</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../logo.png" alt="PureVida">
+          <p>Sustainable hydration solutions for businesses and homes. Pure water, zero bottles.</p>
+          <div style="border-top: 1px solid rgba(255,255,255,0.15); margin-top: 20px; padding-top: 16px;">
+            <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Social Media</h4>
+            <div class="footer-social">
+              <a href="#" class="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+              <a href="#" class="linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg></a>
+              <a href="#" class="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Contact
+          </h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:6157037025">(615) 703-7025</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <a href="mailto:contact@purevida.co">contact@purevida.co</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>1033 Demonbreun St.<br>Suite 300<br>Nashville, TN 37203</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>M-F 8am-5pm CST</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M3 7v14M21 7v14M6 11h4M6 15h4M14 11h4M14 15h4M12 3l9 4M12 3L3 7"/></svg>
+            Commercial
+          </h4>
+          <ul>
+            <li><a href="/commercial/">Commercial Solutions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>
+            Residential
+          </h4>
+          <ul>
+            <li><a href="#solutions">Our Solutions</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#testimonials">Happy Families</a></li>
+            <li><a href="#quality">Trusted Quality</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#founder">About the Founder</a></li>
+            <li><a href="#get-started">Get Started</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-cta-col">
+          <h4>Get Started</h4>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:16px;">Ready to upgrade your water experience? Let's talk.</p>
+          <a href="#get-started" class="get-started-btn">
+            Get Started
+            <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div style="border-top:1px solid rgba(255,255,255,0.15);margin-top:24px;padding-top:16px;">
+            <a href="#" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;display:block;margin-bottom:8px;">Privacy Policy</a>
+            <a href="#" style="color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;">Terms</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 PureVida Home. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
