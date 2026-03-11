@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Systems | PureVida Commercial</title>
+  <meta name="description" content="Premium espresso and coffee systems for offices, break rooms, and hospitality environments. Fresh whole bean espresso in a compact design.">
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="apple-touch-icon" href="../../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-56K4HHW2DY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-56K4HHW2DY');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '826786543829137');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=826786543829137&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00bcd4;
+      --cyan-500: #0ea5e9;
+      --cyan-600: #0284c7;
+      --cyan-light: #00e5ff;
+      --blue-dark: #0a5c8a;
+      --blue-deeper: #064a73;
+      --white: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--gray-900);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+      height: 80px;
+    }
+    .nav-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo img { height: 48px; }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-600);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-links a:hover { color: var(--gray-900); background: var(--gray-50); }
+    .nav-links a.active { color: var(--cyan-500); font-weight: 600; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-phone {
+      text-decoration: none;
+      text-align: right;
+    }
+    .nav-phone-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+    .nav-phone-number {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+    .nav-phone-number svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--cyan-500);
+      stroke-width: 2;
+    }
+    .nav-cta {
+      display: inline-block;
+      background: var(--cyan-500);
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--cyan-600); }
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .nav-mobile-toggle svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gray-700);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-bar {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 16px 40px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 1px solid var(--gray-200);
+      border-radius: 50px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .back-btn:hover { border-color: var(--gray-400); color: var(--gray-900); }
+    .back-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ===== CATALOG HERO ===== */
+    .catalog-hero {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 40px 0;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .catalog-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--cyan-500);
+      border: 1.5px solid var(--cyan-500);
+      border-radius: 50px;
+      padding: 6px 16px;
+      margin-bottom: 20px;
+    }
+    .catalog-hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .catalog-hero p {
+      font-size: 18px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+    .catalog-hero-image {
+      display: flex;
+      justify-content: center;
+    }
+    .catalog-hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    /* ===== PRODUCT DETAIL ===== */
+    .product-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+      margin-top: 48px;
+    }
+    .product-info {
+      background: var(--gray-50);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 20px 0 0 20px;
+    }
+    .product-info h2 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .product-info h2 .accent {
+      color: var(--cyan-500);
+    }
+    .product-info p {
+      font-size: 17px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cyan-500);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: background 0.15s;
+      width: fit-content;
+    }
+    .product-cta:hover { background: var(--cyan-600); }
+    .product-cta svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+    .product-image {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      border-radius: 0 20px 20px 0;
+      border: 1px solid var(--gray-100);
+      border-left: none;
+    }
+    .product-image img {
+      max-width: 100%;
+      max-height: 560px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 24px 20px;
+      margin-top: 80px;
+      border-top: 1px solid var(--gray-200);
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .footer a {
+      color: var(--cyan-500);
+      text-decoration: none;
+    }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 1024px) {
+      .nav-phone { display: none; }
+      .catalog-hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .product-section {
+        grid-template-columns: 1fr;
+      }
+      .product-info {
+        border-radius: 20px 20px 0 0;
+        padding: 48px 32px;
+      }
+      .product-image {
+        border-radius: 0 0 20px 20px;
+        border: 1px solid var(--gray-100);
+        border-top: none;
+      }
+    }
+    @media (max-width: 768px) {
+      .nav { height: 64px; }
+      .nav-inner { padding: 0 20px; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-mobile-toggle { display: block; }
+
+      .back-bar { padding: 12px 20px; }
+      .catalog-hero {
+        padding: 24px 20px 0;
+      }
+      .catalog-hero h1 { font-size: 32px; }
+      .catalog-hero p { font-size: 16px; }
+
+      .product-section { margin-top: 32px; }
+      .product-info {
+        padding: 36px 24px;
+      }
+      .product-info h2 { font-size: 28px; }
+      .product-info p { font-size: 15px; }
+      .product-image { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../../logo.png" alt="PureVida">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Welcome</a></li>
+        <li><a href="/commercial/" class="active">Commercial</a></li>
+        <li><a href="/residential/">Residential</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:6157037025" class="nav-phone">
+          <div class="nav-phone-label">Have Questions?</div>
+          <div class="nav-phone-number">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            615-703-7025
+          </div>
+        </a>
+        <a href="/commercial/booking/" class="nav-cta">Schedule My 7-Day Free Trial</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="back-bar">
+    <a href="/commercial/" class="back-btn">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+      Back
+    </a>
+  </div>
+
+  <section class="catalog-hero">
+    <div class="catalog-hero-text">
+      <div class="catalog-badge">Coffee Systems Catalog</div>
+      <h1>Coffee Systems</h1>
+      <p>Premium espresso and coffee solutions for offices, break rooms, and hospitality environments</p>
+    </div>
+    <div class="catalog-hero-image">
+      <img src="hero.png" alt="PureVida Coffee System">
+    </div>
+  </section>
+
+  <div class="product-section">
+    <div class="product-info">
+      <h2>PV12c <span class="accent">Espresso and Coffee System</span></h2>
+      <p>Fresh whole bean espresso, coffee, or powdered beverages in a proven concept. The PV12c offers a quality product in a compact design — perfect for offices, break rooms, and hospitality environments. Features an enlarged bean canister, CoEx brewer with 2 whole bean grinders, 10.4" full color touch screen, Vivinox stainless steel front, and glass detecting cup sensor.</p>
+      <a href="/commercial/booking/" class="product-cta">
+        Schedule My 7-Day Free Trial
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="product-image">
+      <img src="pv12c-product.png" alt="PV12c Espresso and Coffee System">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 PureVida. All rights reserved. &nbsp;|&nbsp; <a href="https://purevida.co">purevida.co</a> &nbsp;|&nbsp; <a href="tel:6157037025">(615) 703-7025</a></p>
+  </footer>
+
+</body>
+</html>

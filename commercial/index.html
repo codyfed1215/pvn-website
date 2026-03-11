@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="../logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -389,12 +389,23 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     }
     .solution-card-image {
-      height: 220px;
-      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      height: 260px;
       position: relative;
       display: flex;
       align-items: flex-end;
       padding: 16px;
+      overflow: hidden;
+      border-radius: 16px;
+      margin: 16px 16px 0;
+    }
+    .solution-card-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
     }
     .solution-card-icon {
       width: 48px;
@@ -405,8 +416,10 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      bottom: -24px;
-      left: 24px;
+      bottom: -8px;
+      left: 8px;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(14,165,233,0.3);
     }
     .solution-card-icon svg {
       width: 24px;
@@ -820,10 +833,9 @@
       margin-bottom: 20px;
     }
     .founder-quote .signature {
-      font-family: 'Georgia', serif;
-      font-size: 28px;
-      font-style: italic;
-      color: var(--gray-400);
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: var(--gray-900);
     }
 
     /* ===== FINAL CTA ===== */
@@ -1148,7 +1160,7 @@
             615-703-7025
           </div>
         </a>
-        <a href="#get-started" class="nav-cta">Schedule My 7-Day Free Trial</a>
+        <a href="/commercial/booking/" class="nav-cta">Schedule My 7-Day Free Trial</a>
       </div>
       <button class="nav-mobile-toggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -1162,7 +1174,7 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1>Your Trusted Partner for a Better Workplace <span class="accent">Water. Ice. Coffee.</span></h1>
-        <a href="#get-started" class="hero-cta">
+        <a href="/commercial/booking/" class="hero-cta">
           Schedule My 7-Day Free Trial
           <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -1217,6 +1229,7 @@
         <!-- Ice & Water -->
         <div class="solution-card">
           <div class="solution-card-image">
+            <img src="ice-water/hero.png" alt="Ice & Water Systems">
             <div class="solution-card-icon">
               <svg viewBox="0 0 24 24"><path d="M20 17.58A5 5 0 0018 8h-1.26A8 8 0 104 16.25"/><path d="M8 16h.01M8 20h.01M12 18h.01M12 22h.01M16 16h.01M16 20h.01"/></svg>
             </div>
@@ -1229,13 +1242,14 @@
               <li>Perfect for healthcare, hospitality & manufacturing</li>
               <li>Crystal-clear quality</li>
             </ul>
-            <a href="#" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="/commercial/ice-water/" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
 
         <!-- Water Systems -->
         <div class="solution-card">
           <div class="solution-card-image">
+            <img src="water-systems/hero.png" alt="Water Systems">
             <div class="solution-card-icon">
               <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
             </div>
@@ -1248,13 +1262,14 @@
               <li>Advanced filtration</li>
               <li>Ideal for offices and homes</li>
             </ul>
-            <a href="#" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="/commercial/water-systems/" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
 
         <!-- Coffee Systems -->
         <div class="solution-card">
           <div class="solution-card-image">
+            <img src="coffee/hero.png" alt="Coffee Systems">
             <div class="solution-card-icon">
               <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
             </div>
@@ -1267,7 +1282,7 @@
               <li>Simple setup and support</li>
               <li>Bean-to-cup freshness</li>
             </ul>
-            <a href="#" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="/commercial/coffee/" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
       </div>
@@ -1437,7 +1452,7 @@
       <p class="certs-text">We'll conduct a comprehensive analysis of your water quality, identify operational risks, and recommend the most effective solutions for your facility, usage demands, and budget. From commercial-grade water conditioning and softening systems to advanced drinking water, ice, and specialty filtration solutions — we provide <strong>premium systems engineered to deliver consistent, clean, great-tasting water that protects your equipment, enhances your operations, and supports your team.</strong></p>
 
       <div class="certs-cta">
-        <a href="#get-started" class="btn-cyan">Schedule My 7-Day Free Trial</a>
+        <a href="/commercial/booking/" class="btn-cyan">Schedule My 7-Day Free Trial</a>
       </div>
     </div>
   </section>
@@ -1601,7 +1616,7 @@
       </div>
       <h2>Upgrade Your Water<br><span class="light">Experience Today.</span></h2>
       <p class="sub">Cleaner. Smarter. More sustainable hydration — without the hassle.</p>
-      <a href="#get-started" class="final-cta-btn">
+      <a href="/commercial/booking/" class="final-cta-btn">
         Schedule My 7-Day Free Trial
         <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
