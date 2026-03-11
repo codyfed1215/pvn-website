@@ -14,11 +14,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cyan: #00bcd4;
-      --cyan-500: #0ea5e9;
-      --cyan-600: #0284c7;
-      --cyan-light: #00e5ff;
-      --blue-dark: #0a5c8a;
+      --primary: hsl(202, 100%, 20%);
+      --primary-foreground: #ffffff;
+      --accent: hsl(193, 99%, 43%);
+      --accent-foreground: #ffffff;
+      --background: hsl(0, 0%, 100%);
+      --foreground: hsl(202, 35%, 12%);
+      --card: #ffffff;
+      --card-foreground: hsl(202, 35%, 12%);
+      --muted: hsl(210, 25%, 96%);
+      --muted-foreground: hsl(215, 16%, 47%);
+      --border: hsl(210, 20%, 90%);
       --white: #ffffff;
       --gray-50: #f8fafc;
       --gray-100: #f1f5f9;
@@ -29,6 +35,10 @@
       --gray-700: #334155;
       --gray-900: #0f172a;
       --gold: #f59e0b;
+      --shadow-soft: 0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04);
+      --shadow-medium: 0 4px 25px -5px rgba(0,0,0,0.1), 0 10px 30px -5px rgba(0,0,0,0.06);
+      --shadow-elevated: 0 20px 60px -10px rgba(0,0,0,0.12), 0 8px 20px -6px rgba(0,0,0,0.08);
+      --shadow-glow: 0 4px 20px hsla(193, 99%, 43%, 0.35);
     }
 
     html { scroll-behavior: smooth; }
@@ -43,11 +53,14 @@
 
     /* ===== NAV ===== */
     .nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--gray-200);
+      left: 0;
+      right: 0;
+      background: hsla(0, 0%, 100%, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-soft);
       z-index: 100;
       padding: 0 40px;
     }
@@ -57,7 +70,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 76px;
     }
     .nav-logo {
       display: flex;
@@ -66,13 +79,13 @@
       text-decoration: none;
     }
     .nav-logo img {
-      height: 56px;
+      height: 64px;
       width: auto;
     }
     .nav-logo-text {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 800;
-      color: var(--cyan-500);
+      color: var(--accent);
       line-height: 1.1;
     }
     .nav-logo-text span {
@@ -81,20 +94,33 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
       list-style: none;
+    }
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links li:not(:last-child)::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+      display: block;
     }
     .nav-links a {
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--gray-600);
-      transition: color 0.15s;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(0,0,0,0.6);
+      padding: 8px 20px;
+      transition: color 0.2s;
     }
-    .nav-links a:hover,
+    .nav-links a:hover {
+      color: rgba(0,0,0,1);
+    }
     .nav-links a.active {
-      color: var(--gray-900);
-      font-weight: 700;
+      color: rgba(0,0,0,1);
+      font-weight: 800;
     }
     .nav-right {
       display: flex;
@@ -110,39 +136,75 @@
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--gray-500);
+      letter-spacing: 1.5px;
+      color: var(--muted-foreground);
     }
     .nav-phone-number {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 800;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+    }
+    .nav-phone-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: hsla(202, 100%, 20%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .nav-phone-number svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--gray-500);
+      width: 16px;
+      height: 16px;
+      stroke: var(--foreground);
       fill: none;
       stroke-width: 2;
+    }
+    .nav-cta-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
     }
     .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--cyan-500);
-      color: var(--white);
+      background: var(--accent);
+      color: var(--accent-foreground);
       padding: 12px 24px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 14px;
-      transition: background 0.15s, transform 0.15s;
+      box-shadow: 0 4px 16px hsla(193, 99%, 43%, 0.3);
+      transition: all 0.3s;
     }
     .nav-cta:hover {
-      background: var(--cyan-600);
-      transform: translateY(-1px);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+    .nav-learn-more {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-learn-more:hover {
+      color: hsla(193, 99%, 35%, 1);
+    }
+    .nav-learn-more svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
     }
     .nav-mobile-toggle {
       display: none;
@@ -162,11 +224,9 @@
     /* ===== HERO ===== */
     .hero {
       position: relative;
-      min-height: 580px;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
       overflow: hidden;
     }
     .hero-bg {
@@ -178,88 +238,117 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: brightness(1.15) saturate(1.1);
     }
     .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(232,241,248,0.85) 0%, rgba(221,233,243,0.7) 40%, rgba(208,225,237,0.5) 100%);
+      background: linear-gradient(to bottom right,
+        hsla(202, 40%, 25%, 0.55),
+        hsla(202, 35%, 35%, 0.45),
+        hsla(193, 45%, 45%, 0.35));
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 80px 40px;
-      max-width: 900px;
+      padding: 120px 40px 160px;
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
     }
     .hero h1 {
       font-size: 52px;
       font-weight: 800;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--white);
       margin-bottom: 24px;
       letter-spacing: -1px;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.2);
     }
     .hero h1 .accent {
-      color: var(--cyan-light);
+      color: var(--accent);
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+    }
+    .hero-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+    }
+    .hero-wave svg {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     /* Floating card */
     .hero-float-card {
-      position: absolute;
-      right: 25%;
-      bottom: 80px;
-      background: var(--white);
-      border-radius: 16px;
-      padding: 24px 28px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      position: relative;
+      display: inline-flex;
       z-index: 3;
+      margin-top: auto;
+    }
+    .hero-float-card-inner {
+      background: hsla(0, 0%, 100%, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-elevated);
+      border: 1px solid hsla(210, 20%, 90%, 0.5);
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
     .hero-float-badge {
       position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--cyan-500);
-      color: var(--white);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 11px;
+      top: -12px;
+      right: -12px;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 12px;
       font-weight: 700;
       white-space: nowrap;
+      box-shadow: var(--shadow-glow);
     }
     .hero-float-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(14,165,233,0.1);
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
     .hero-float-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--cyan-500);
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent-foreground);
       fill: none;
       stroke-width: 2;
     }
     .hero-float-number {
-      font-size: 32px;
-      font-weight: 800;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--foreground);
     }
     .hero-float-label {
       font-size: 14px;
-      color: var(--gray-500);
+      color: var(--muted-foreground);
     }
 
     /* ===== TRUST BAR ===== */
     .trust-bar {
+      position: relative;
+      z-index: 20;
+      background: var(--background);
       padding: 40px 40px;
-      border-bottom: 1px solid var(--gray-200);
     }
     .trust-bar-inner {
       max-width: 1240px;
@@ -267,8 +356,8 @@
     }
     .trust-items {
       display: flex;
-      justify-content: center;
-      gap: 40px;
+      justify-content: space-between;
+      gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 32px;
     }
@@ -278,27 +367,31 @@
       gap: 12px;
     }
     .trust-item-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--gray-100);
-      border-radius: 10px;
+      width: 56px;
+      height: 56px;
+      background: hsla(202, 35%, 12%, 0.05);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .trust-item:hover .trust-item-icon {
+      background: hsla(202, 35%, 12%, 0.1);
     }
     .trust-item-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--gray-600);
+      width: 32px;
+      height: 32px;
+      stroke: hsla(202, 35%, 12%, 0.7);
       fill: none;
       stroke-width: 1.5;
     }
     .trust-item-text {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gray-700);
-      max-width: 120px;
+      font-size: 16px;
+      font-weight: 800;
+      color: hsla(202, 35%, 12%, 0.7);
+      max-width: 130px;
       line-height: 1.3;
     }
     .trust-cta {
@@ -315,26 +408,35 @@
     }
     .section-badge {
       display: inline-block;
-      background: rgba(14,165,233,0.08);
-      color: var(--cyan-500);
+      background: hsla(193, 99%, 43%, 0.15);
+      color: var(--accent);
       padding: 8px 20px;
       border-radius: 50px;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
     }
     .section-title {
       font-size: 40px;
-      font-weight: 800;
-      margin-top: 16px;
-      margin-bottom: 12px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 16px;
       letter-spacing: -0.5px;
+      color: var(--foreground);
     }
-    .section-title .accent { color: var(--cyan-500); }
+    .section-title .accent { color: var(--accent); }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), hsl(193, 99%, 50%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .section-sub {
-      font-size: 17px;
-      color: var(--gray-500);
+      font-size: 18px;
+      color: var(--muted-foreground);
       max-width: 640px;
       line-height: 1.7;
     }
@@ -345,54 +447,69 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--cyan-500);
-      color: var(--white);
-      padding: 16px 36px;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      padding: 18px 40px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      transition: background 0.15s, transform 0.15s;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: var(--shadow-glow);
+      transition: all 0.3s;
     }
     .btn-cyan:hover {
-      background: var(--cyan-600);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-elevated);
+      filter: brightness(1.05);
     }
     .btn-cyan svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       stroke: currentColor;
       fill: none;
       stroke-width: 2.5;
+      transition: transform 0.3s;
+    }
+    .btn-cyan:hover svg {
+      transform: translateX(4px);
     }
 
     /* ===== SOLUTIONS ===== */
     .solutions-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
       margin-top: 48px;
     }
     .solution-card {
-      background: var(--white);
-      border-radius: 16px;
+      position: relative;
+      background: var(--card);
+      border-radius: 24px;
       overflow: hidden;
-      border: 1px solid var(--gray-200);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.5s;
     }
     .solution-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-elevated);
+    }
+    .solution-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px hsla(193, 99%, 43%, 0.2);
+    }
+    .solution-card:hover::after {
+      opacity: 1;
     }
     .solution-card-image {
-      height: 260px;
+      height: 224px;
       position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 16px;
       overflow: hidden;
-      border-radius: 16px;
-      margin: 16px 16px 0;
     }
     .solution-card-image img {
       position: absolute;
@@ -401,320 +518,539 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 12px;
+      transition: transform 0.7s;
+    }
+    .solution-card:hover .solution-card-image img {
+      transform: scale(1.1);
+    }
+    .solution-card-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--card) 0%, hsla(0,0%,100%,0.2) 50%, transparent 100%);
     }
     .solution-card-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--cyan-500);
-      border-radius: 12px;
+      width: 56px;
+      height: 56px;
+      background: var(--accent);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: absolute;
-      bottom: -24px;
+      bottom: 16px;
       left: 24px;
+      z-index: 2;
+      box-shadow: var(--shadow-glow);
+      transition: transform 0.3s;
+    }
+    .solution-card:hover .solution-card-icon {
+      transform: scale(1.1);
     }
     .solution-card-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: white;
+      width: 28px;
+      height: 28px;
+      stroke: var(--accent-foreground);
       fill: none;
       stroke-width: 2;
     }
     .solution-card-body {
-      padding: 36px 24px 24px;
+      padding: 16px 24px 24px;
     }
     .solution-card-body h3 {
       font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--card-foreground);
     }
     .solution-card-body > p {
       font-size: 14px;
-      color: var(--gray-500);
+      color: var(--muted-foreground);
       line-height: 1.6;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .solution-card-body ul {
       list-style: none;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .solution-card-body li {
       font-size: 14px;
-      color: var(--gray-600);
-      padding: 4px 0;
+      color: var(--muted-foreground);
+      padding: 5px 0;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
     .solution-card-body li::before {
       content: '';
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--cyan-500);
+      background: var(--accent);
       flex-shrink: 0;
     }
     .solution-card-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
-      color: var(--cyan-500);
+      color: var(--accent);
       text-decoration: none;
+      transition: color 0.3s;
+    }
+    .solution-card-link:hover {
+      color: hsla(193, 99%, 35%, 1);
     }
     .solution-card-link svg {
-      width: 16px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       stroke: currentColor;
       fill: none;
       stroke-width: 2.5;
+      transition: transform 0.3s;
+    }
+    .solution-card-link:hover svg {
+      transform: translateX(4px);
     }
 
     /* ===== IMPACT ===== */
     .impact {
-      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+      background: linear-gradient(180deg, var(--background) 0%, var(--muted) 50%, var(--background) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .impact::before,
+    .impact::after {
+      content: '';
+      position: absolute;
+      width: 384px;
+      height: 384px;
+      border-radius: 50%;
+      filter: blur(48px);
+    }
+    .impact::before {
+      top: 0;
+      right: 0;
+      background: hsla(202, 100%, 20%, 0.05);
+    }
+    .impact::after {
+      bottom: 0;
+      left: 0;
+      background: hsla(193, 99%, 43%, 0.1);
     }
     .impact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
       margin-top: 48px;
+      position: relative;
+      z-index: 1;
     }
     .impact-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 20px;
-      padding: 40px 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
       text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: all 0.3s;
+    }
+    .impact-card:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: hsla(202, 100%, 20%, 0.3);
     }
     .impact-card-icon {
       width: 56px;
       height: 56px;
-      background: var(--gray-100);
-      border-radius: 14px;
+      background: hsla(193, 90%, 40%, 0.1);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: 0 auto 16px;
+      transition: transform 0.3s;
+    }
+    .impact-card:hover .impact-card-icon {
+      transform: scale(1.1);
     }
     .impact-card-icon svg {
       width: 28px;
       height: 28px;
-      stroke: var(--cyan-500);
+      stroke: hsl(193, 90%, 40%);
       fill: none;
       stroke-width: 1.5;
     }
     .impact-card .number {
       font-size: 48px;
-      font-weight: 800;
-      color: var(--cyan-500);
-      margin-bottom: 4px;
+      font-weight: 700;
+      color: hsl(193, 90%, 40%);
+      margin-bottom: 8px;
     }
     .impact-card .label-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--gray-900);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--foreground);
       margin-bottom: 4px;
     }
     .impact-card .label {
       font-size: 14px;
-      color: var(--gray-500);
+      color: var(--muted-foreground);
     }
 
     /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: linear-gradient(180deg, var(--muted) 0%, var(--background) 40%, var(--background) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonials::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: hsla(202, 100%, 20%, 0.05);
+      border-radius: 50%;
+      filter: blur(48px);
+    }
     .testimonials-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 48px;
+      position: relative;
+      z-index: 1;
     }
     .testimonial-card {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 20px;
-      padding: 32px 28px;
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: all 0.5s;
+    }
+    .testimonial-card:hover {
+      border-color: hsla(202, 100%, 20%, 0.3);
+      box-shadow: var(--shadow-elevated);
+      transform: translateY(-8px);
+    }
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: linear-gradient(to bottom right, hsla(202, 100%, 20%, 0.05), transparent);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .testimonial-card:hover::before {
+      opacity: 1;
     }
     .testimonial-quote-icon {
-      font-size: 40px;
-      color: var(--cyan-500);
-      opacity: 0.3;
-      line-height: 1;
+      color: var(--primary);
+      opacity: 0.2;
       margin-bottom: 16px;
+      transition: opacity 0.3s;
+    }
+    .testimonial-card:hover .testimonial-quote-icon {
+      opacity: 0.4;
+    }
+    .testimonial-quote-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
     }
     .testimonial-text {
-      font-size: 15px;
-      color: var(--gray-600);
-      line-height: 1.7;
-      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      color: hsla(202, 35%, 12%, 0.8);
+      line-height: 1.6;
+      margin-bottom: 24px;
     }
     .testimonial-stars {
-      color: var(--gold);
-      font-size: 16px;
-      margin-bottom: 16px;
+      display: flex;
+      gap: 4px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: #fbbf24;
+      stroke: #fbbf24;
+      stroke-width: 1;
     }
     .testimonial-author {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
     }
     .testimonial-avatar {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background: var(--cyan-500);
-      color: var(--white);
+      background: linear-gradient(to bottom right, var(--primary), hsla(202, 100%, 20%, 0.7));
+      color: var(--primary-foreground);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
+      transition: transform 0.3s;
+    }
+    .testimonial-card:hover .testimonial-avatar {
+      transform: scale(1.1);
     }
     .testimonial-name {
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
+      color: var(--foreground);
     }
     .testimonial-role {
-      font-size: 13px;
-      color: var(--gray-500);
+      font-size: 14px;
+      color: var(--muted-foreground);
     }
 
     /* ===== CERTIFICATIONS ===== */
     .certs {
-      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+      background: linear-gradient(180deg, var(--muted) 0%, var(--muted) 50%, var(--background) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .certs::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: hsla(193, 99%, 43%, 0.05);
+      border-radius: 50%;
+      filter: blur(48px);
     }
     .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 16px;
       margin-top: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
     }
     .cert-item {
-      background: var(--white);
-      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
       border-radius: 16px;
-      padding: 24px 16px;
-      text-align: center;
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s;
+    }
+    .cert-item:hover {
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-4px);
     }
     .cert-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--gray-100);
+      width: 56px;
+      height: 56px;
+      background: hsla(193, 99%, 43%, 0.1);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 12px;
+      transition: all 0.3s;
+    }
+    .cert-item:hover .cert-icon {
+      background: var(--accent);
     }
     .cert-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--cyan-500);
+      width: 28px;
+      height: 28px;
+      stroke: var(--accent);
       fill: none;
       stroke-width: 1.5;
+      transition: stroke 0.3s;
+    }
+    .cert-item:hover .cert-icon svg {
+      stroke: var(--accent-foreground);
     }
     .cert-label {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      color: var(--gray-700);
+      color: var(--foreground);
+      text-align: center;
     }
     .certs-text {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
-      font-size: 16px;
-      color: var(--gray-500);
-      line-height: 1.8;
+      font-size: 18px;
+      color: var(--muted-foreground);
+      line-height: 1.7;
       margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
     }
     .certs-text strong {
-      color: var(--gray-700);
+      color: var(--foreground);
+      font-weight: 600;
     }
 
     /* ===== HOW IT WORKS ===== */
     .how-it-works {
-      background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+      background: linear-gradient(180deg, var(--background) 0%, var(--muted) 50%, var(--muted) 70%, var(--background) 100%);
+    }
+    .steps-container {
+      position: relative;
+      margin-top: 48px;
+    }
+    .steps-line {
+      display: none;
     }
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
-      margin-top: 48px;
+      position: relative;
     }
     .step-item { text-align: center; }
     .step-icon-wrapper {
       position: relative;
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .step-icon {
-      width: 72px;
-      height: 72px;
-      background: var(--white);
-      border-radius: 18px;
+      width: 80px;
+      height: 80px;
+      background: var(--card);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-medium);
       margin: 0 auto;
+      transition: box-shadow 0.3s;
+    }
+    .step-icon:hover {
+      box-shadow: var(--shadow-elevated);
     }
     .step-icon svg {
       width: 32px;
       height: 32px;
-      stroke: var(--cyan-500);
+      stroke: var(--accent);
       fill: none;
       stroke-width: 1.5;
     }
     .step-number {
       position: absolute;
-      top: -6px;
-      right: -6px;
-      width: 24px;
-      height: 24px;
-      background: var(--cyan-500);
-      color: var(--white);
+      top: -8px;
+      right: -8px;
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      color: var(--accent-foreground);
       border-radius: 50%;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .step-item h3 {
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 12px;
     }
     .step-item p {
       font-size: 14px;
-      color: var(--gray-500);
+      color: var(--muted-foreground);
       line-height: 1.6;
       max-width: 260px;
       margin: 0 auto;
     }
 
+    @media (min-width: 1025px) {
+      .steps-line {
+        display: block;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(to right, transparent, hsla(193, 99%, 43%, 0.3), transparent);
+      }
+    }
+
     /* ===== FOUNDER ===== */
-    .founder-section { padding: 80px 40px; }
+    .founder-section {
+      padding: 80px 40px;
+      background: linear-gradient(180deg, var(--background) 0%, var(--muted) 50%, var(--background) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .founder-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 25%;
+      width: 384px;
+      height: 384px;
+      background: hsla(202, 100%, 20%, 0.05);
+      border-radius: 50%;
+      filter: blur(48px);
+    }
+    .founder-section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 25%;
+      width: 320px;
+      height: 320px;
+      background: hsla(193, 99%, 43%, 0.1);
+      border-radius: 50%;
+      filter: blur(48px);
+    }
     .founder-inner {
       max-width: 1240px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .founder-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      margin-top: 40px;
+      gap: 48px;
+      margin-top: 48px;
       align-items: start;
     }
     .founder-image {
       width: 100%;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
       background: var(--gray-100);
-      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-elevated);
+      border: 1px solid var(--border);
+    }
+    .founder-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
     .founder-image-placeholder {
       width: 100%;
@@ -728,31 +1064,32 @@
     }
     .founder-bio p {
       font-size: 16px;
-      color: var(--gray-500);
-      line-height: 1.8;
+      color: var(--muted-foreground);
+      line-height: 1.7;
       margin-bottom: 20px;
     }
     .founder-quote {
       max-width: 900px;
-      margin: 60px auto 0;
+      margin: 48px auto 0;
       text-align: center;
-      background: var(--white);
-      border: 1px solid var(--gray-200);
-      border-radius: 20px;
-      padding: 48px 60px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 48px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .founder-quote p {
       font-size: 22px;
-      font-weight: 600;
+      font-weight: 500;
       font-style: italic;
-      color: var(--gray-700);
+      color: var(--foreground);
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .founder-quote .signature {
       font-family: 'Great Vibes', cursive;
       font-size: 36px;
-      color: var(--gray-900);
+      color: var(--foreground);
     }
 
     /* ===== FINAL CTA ===== */
@@ -762,85 +1099,118 @@
     .final-cta-card {
       max-width: 1240px;
       margin: 0 auto;
-      background: linear-gradient(135deg, #0a6e9e 0%, #0ea5e9 50%, #00e5ff 100%);
-      border-radius: 28px;
-      padding: 80px 40px;
+      background: linear-gradient(to bottom right, var(--primary), var(--primary), hsl(202, 100%, 28%));
+      border-radius: 24px;
+      padding: 64px 40px 80px;
       text-align: center;
-      color: var(--white);
+      color: var(--primary-foreground);
       position: relative;
       overflow: hidden;
     }
     .final-cta-card::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.08) 100%);
+      top: 0;
+      right: 0;
+      width: 500px;
+      height: 500px;
+      background: hsla(193, 99%, 43%, 0.2);
+      border-radius: 50%;
+      filter: blur(120px);
+    }
+    .final-cta-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 400px;
+      height: 400px;
+      background: hsla(193, 99%, 43%, 0.15);
+      border-radius: 50%;
+      filter: blur(100px);
     }
     .final-cta-content {
       position: relative;
       z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
     }
     .final-cta .promo-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 8px 20px;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      padding: 10px 20px;
       border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 28px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .final-cta h2 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 8px;
+      font-size: 52px;
+      font-weight: 700;
+      margin-bottom: 24px;
       letter-spacing: -1px;
+      line-height: 1.1;
     }
     .final-cta h2 .light {
-      color: rgba(255,255,255,0.6);
       display: block;
+      background: linear-gradient(to right, var(--accent), hsl(193, 99%, 50%), hsl(52, 95%, 70%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .final-cta .sub {
-      font-size: 18px;
-      opacity: 0.85;
-      margin-bottom: 36px;
+      font-size: 20px;
+      color: hsla(0, 0%, 100%, 0.8);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .final-cta .sub strong {
+      color: var(--primary-foreground);
+      font-weight: 500;
     }
     .final-cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--white);
-      color: var(--cyan-500);
-      padding: 18px 44px;
+      background: linear-gradient(to right, var(--accent), hsl(193, 99%, 50%));
+      color: var(--accent-foreground);
+      padding: 20px 40px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 17px;
-      transition: transform 0.15s, box-shadow 0.15s;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 8px 30px hsla(193, 99%, 43%, 0.3);
+      transition: all 0.3s;
     }
     .final-cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px hsla(193, 99%, 43%, 0.5);
     }
     .final-cta-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       stroke: currentColor;
       fill: none;
       stroke-width: 2.5;
+      transition: transform 0.3s;
+    }
+    .final-cta-btn:hover svg {
+      transform: translateX(4px);
     }
     .final-cta-checks {
       display: flex;
       justify-content: center;
-      gap: 32px;
+      gap: 24px;
       margin-top: 28px;
       list-style: none;
     }
     .final-cta-checks li {
       font-size: 14px;
-      opacity: 0.85;
+      color: hsla(0, 0%, 100%, 0.6);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -850,13 +1220,13 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.6);
+      background: var(--accent);
     }
 
     /* ===== FOOTER ===== */
     .footer {
-      background: linear-gradient(135deg, #0a6e9e 0%, #0ea5e9 100%);
-      color: var(--white);
+      background: var(--primary);
+      color: var(--primary-foreground);
       padding: 60px 40px 32px;
     }
     .footer-inner {
@@ -937,18 +1307,28 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--cyan-500);
-      color: var(--white);
-      padding: 12px 28px;
+      background: linear-gradient(to right, var(--accent), hsl(193, 99%, 50%));
+      color: var(--accent-foreground);
+      padding: 12px 24px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 14px;
       margin-top: 8px;
+      box-shadow: 0 4px 20px hsla(193, 99%, 43%, 0.35);
+      transition: all 0.3s;
+    }
+    .footer-cta-col .get-started-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
     }
     .footer-cta-col .get-started-btn svg {
       width: 16px; height: 16px;
       stroke: currentColor; fill: none; stroke-width: 2.5;
+      transition: transform 0.3s;
+    }
+    .footer-cta-col .get-started-btn:hover svg {
+      transform: translateX(4px);
     }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.15);
@@ -959,14 +1339,16 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .hero h1 { font-size: 38px; }
+      .hero h1 { font-size: 40px; }
       .hero-float-card { display: none; }
       .solutions-grid, .impact-grid, .testimonials-grid { grid-template-columns: 1fr; }
-      .certs-grid { grid-template-columns: repeat(3, 1fr); }
+      .certs-grid { flex-wrap: wrap; }
+      .cert-item { flex: 0 0 calc(33.33% - 12px); }
       .steps-grid { grid-template-columns: repeat(2, 1fr); }
       .founder-content { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .trust-items { gap: 20px; }
+      .trust-items { gap: 20px; justify-content: center; }
+      .section-title { font-size: 36px; }
     }
     @media (max-width: 768px) {
       .nav { padding: 0 20px; }
@@ -977,22 +1359,22 @@
       .nav-logo img { height: 44px; }
 
       .section { padding: 56px 20px; }
-      .section-title { font-size: 28px; }
-      .section-sub { font-size: 15px; }
+      .section-title { font-size: 30px; }
+      .section-sub { font-size: 16px; }
 
-      .hero { min-height: auto; }
-      .hero-content { padding: 48px 20px; }
+      .hero { min-height: 100vh; }
+      .hero-content { padding: 100px 20px 140px; }
       .hero h1 { font-size: 30px; }
 
       .trust-bar { padding: 28px 20px; }
       .trust-items { flex-direction: column; align-items: flex-start; gap: 16px; }
 
-      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .cert-item { flex: 0 0 calc(50% - 8px); }
       .steps-grid { grid-template-columns: 1fr; }
 
       .final-cta { padding: 20px; }
       .final-cta-card { padding: 48px 20px; border-radius: 20px; }
-      .final-cta h2 { font-size: 30px; }
+      .final-cta h2 { font-size: 32px; }
       .final-cta-checks { flex-direction: column; align-items: center; gap: 12px; }
 
       .founder-section { padding: 56px 20px; }
@@ -1011,6 +1393,7 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo">
         <img src="../logo.png" alt="PureVida Home">
+        <div class="nav-logo-text"><span>PureVida</span><span>Home</span></div>
       </a>
       <ul class="nav-links">
         <li><a href="/">Welcome</a></li>
@@ -1018,14 +1401,19 @@
         <li><a href="/residential/" class="active">Residential</a></li>
       </ul>
       <div class="nav-right">
-        <a href="tel:6157037025" class="nav-phone">
-          <div class="nav-phone-label">Have Questions?</div>
-          <div class="nav-phone-number">
+        <a href="tel:6157037025" class="nav-phone" style="display:flex;align-items:center;gap:12px;">
+          <div class="nav-phone-icon">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            615-703-7025
+          </div>
+          <div>
+            <div class="nav-phone-label">Have Questions?</div>
+            <div class="nav-phone-number">615-703-7025</div>
           </div>
         </a>
-        <a href="/residential/booking/" class="nav-cta">Free Water Assessment</a>
+        <div class="nav-cta-col">
+          <a href="/residential/booking/" class="nav-cta">Free Water Assessment</a>
+          <a href="#solutions" class="nav-learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
       <button class="nav-mobile-toggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -1039,17 +1427,25 @@
       <img src="hero-bg.jpg" alt="Family enjoying pure water">
     </div>
     <div class="hero-content">
-      <h1>Pure, Clean, Safe Water for <span class="accent">Your Family and Home</span></h1>
+      <h1>Pure, Clean, Safe Water for<br><span class="accent">Your Family and Home</span></h1>
+
+      <div class="hero-float-card">
+        <div class="hero-float-card-inner">
+          <div class="hero-float-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div>
+            <div class="hero-float-number">500+</div>
+            <div class="hero-float-label">Happy Families</div>
+          </div>
+          <div class="hero-float-badge">Serving in 2026</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-float-card">
-      <div class="hero-float-badge">Serving in 2026</div>
-      <div class="hero-float-icon">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      </div>
-      <div>
-        <div class="hero-float-number">500+</div>
-        <div class="hero-float-label">Happy Families</div>
-      </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+      </svg>
     </div>
   </section>
 
@@ -1097,6 +1493,9 @@
     </div>
   </section>
 
+  <!-- Divider -->
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;"><div style="height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);"></div></div>
+
   <!-- ===== SOLUTIONS ===== -->
   <section class="section">
     <div class="section-inner text-center">
@@ -1117,10 +1516,10 @@
             <p>Complete water treatment for your entire home. Protect your family, appliances, and plumbing from hard water damage.</p>
             <ul>
               <li>Removes Hard Water</li>
-              <li>Protects Appliances</li>
-              <li>Softer Skin & Hair</li>
+              <li>Reduces Chlorine & Odors</li>
+              <li>NSF Certified</li>
             </ul>
-            <a href="/residential/whole-home/" class="solution-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="/residential/whole-home/" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
 
@@ -1136,10 +1535,10 @@
             <p>Five stages of advanced treatment including reverse osmosis technology for pure, fresh water on demand.</p>
             <ul>
               <li>5-Stage Filtration</li>
-              <li>Removes 99% of Contaminants</li>
-              <li>Great Tasting Water</li>
+              <li>96% TDS Reduction</li>
+              <li>NSF Certified</li>
             </ul>
-            <a href="/residential/reverse-osmosis/" class="solution-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="/residential/reverse-osmosis/" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
 
@@ -1156,9 +1555,9 @@
             <ul>
               <li>9-Stage DFS Technology</li>
               <li>Removes 99.99% of particles</li>
-              <li>Whole-home coverage</li>
+              <li>Up to 1,200 sq ft coverage</li>
             </ul>
-            <a href="/residential/air-purification/" class="solution-card-link">Learn More <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="/residential/air-purification/" class="solution-card-link">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
       </div>
@@ -1183,7 +1582,7 @@
         </div>
         <div class="impact-card">
           <div class="impact-card-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M3 3h.01M7 5h.01M11 7h.01M3 7h.01M7 9h.01M3 11h.01"/><rect width="4" height="4" x="15" y="5"/><path d="m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2M13 14l8-2M13 19l8-2"/></svg>
           </div>
           <div class="number">70%</div>
           <div class="label-title">Less Products</div>
@@ -1202,7 +1601,7 @@
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="section">
+  <section class="section testimonials">
     <div class="section-inner text-center">
       <span class="section-badge">Happy Families</span>
       <h2 class="section-title">Loved by Families Everywhere</h2>
@@ -1210,9 +1609,9 @@
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="testimonial-quote-icon">&ldquo;</div>
+          <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/></svg></div>
           <p class="testimonial-text">"My kids actually drink more water now! The water tastes so much better than what we were getting from bottles. Plus, no more heavy grocery runs for water."</p>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">ER</div>
             <div><div class="testimonial-name">Emily R.</div><div class="testimonial-role">Mother of 3, Nashville, TN</div></div>
@@ -1220,9 +1619,9 @@
         </div>
 
         <div class="testimonial-card">
-          <div class="testimonial-quote-icon">&ldquo;</div>
+          <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/></svg></div>
           <p class="testimonial-text">"Installation was quick and easy. The system looks sleek in our kitchen, and the water quality is amazing. Best home improvement we've made this year."</p>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">MT</div>
             <div><div class="testimonial-name">Michael T.</div><div class="testimonial-role">Homeowner, Franklin, TN</div></div>
@@ -1230,9 +1629,9 @@
         </div>
 
         <div class="testimonial-card">
-          <div class="testimonial-quote-icon">&ldquo;</div>
+          <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/></svg></div>
           <p class="testimonial-text">"As someone who tracks my water intake, having pure, great-tasting water available all day has made staying hydrated effortless. I feel the difference."</p>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">LP</div>
             <div><div class="testimonial-name">Lisa P.</div><div class="testimonial-role">Health Enthusiast, Murfreesboro, TN</div></div>
@@ -1240,9 +1639,9 @@
         </div>
 
         <div class="testimonial-card">
-          <div class="testimonial-quote-icon">&ldquo;</div>
+          <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/></svg></div>
           <p class="testimonial-text">"As a dad, protecting my family matters to me. Clean water isn't something I want to question. This system gives me confidence we're doing the right thing for our home."</p>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">JD</div>
             <div><div class="testimonial-name">Jordan D.</div><div class="testimonial-role">Father and Husband, Brentwood, TN</div></div>
@@ -1250,9 +1649,9 @@
         </div>
 
         <div class="testimonial-card">
-          <div class="testimonial-quote-icon">&ldquo;</div>
+          <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/></svg></div>
           <p class="testimonial-text">"As a mom of three, I'm thankful for anything that helps me care for my kids well. The water tastes great, my kids drink more of it, and I have peace knowing we're taking good care of our family. Love it!"</p>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">BD</div>
             <div><div class="testimonial-name">Bethany D.</div><div class="testimonial-role">Stay-at-home Mom, Bellevue, TN</div></div>
@@ -1260,9 +1659,9 @@
         </div>
 
         <div class="testimonial-card">
-          <div class="testimonial-quote-icon">&ldquo;</div>
+          <div class="testimonial-quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2 1 1 0 011 1v1a2 2 0 01-2 2 1 1 0 00-1 1v2a1 1 0 001 1 6 6 0 006-6V5a2 2 0 00-2-2z"/></svg></div>
           <p class="testimonial-text">"At my age, water quality matters for health. The peace of mind knowing every glass is pure is priceless. Service has been exceptional too."</p>
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <div class="testimonial-author">
             <div class="testimonial-avatar">DL</div>
             <div><div class="testimonial-name">David L.</div><div class="testimonial-role">Retiree, Clarksville, TN</div></div>
@@ -1276,7 +1675,7 @@
   <section class="section certs">
     <div class="section-inner text-center">
       <span class="section-badge">Trusted Quality</span>
-      <h2 class="section-title">100% Certified For Your <span class="accent">Peace Of Mind</span></h2>
+      <h2 class="section-title">100% Certified For Your <span class="gradient-text">Peace Of Mind</span></h2>
 
       <div class="certs-grid">
         <div class="cert-item">
@@ -1322,7 +1721,9 @@
       <h2 class="section-title">Easy Installation Process</h2>
       <p class="section-sub mx-auto">We make getting pure water at home simple and hassle-free.</p>
 
-      <div class="steps-grid">
+      <div class="steps-container">
+        <div class="steps-line"></div>
+        <div class="steps-grid">
         <div class="step-item">
           <div class="step-icon-wrapper">
             <div class="step-icon">
@@ -1367,6 +1768,7 @@
           <p>Friendly customer support, filter change reminders, and annual maintenance available.</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
@@ -1378,7 +1780,7 @@
 
       <div class="founder-content" style="text-align: left;">
         <div class="founder-image">
-          <img src="../founders.jpg" alt="Russell Fedell and family" style="width:100%; height:100%; object-fit:cover;">
+          <img src="../founders.jpg" alt="Russell Fedell and family">
         </div>
         <div class="founder-bio">
           <p>Russell Fedell is the founder of PureVida, a company built on the belief that what we consume every day should protect our health, our families, and our future.</p>

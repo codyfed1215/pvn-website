@@ -44,11 +44,14 @@
 
     /* ===== NAV ===== */
     .nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--gray-200);
+      left: 0;
+      right: 0;
+      background: hsla(0, 0%, 100%, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04);
       z-index: 100;
       padding: 0 40px;
     }
@@ -58,29 +61,57 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 76px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
     }
     .nav-logo img {
-      height: 56px;
+      height: 64px;
       width: auto;
+    }
+    .nav-logo-text {
+      font-size: 24px;
+      font-weight: 800;
+      color: hsl(193, 99%, 43%);
+      line-height: 1.1;
+    }
+    .nav-logo-text span {
+      display: block;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
       list-style: none;
+    }
+    .nav-links li {
+      display: flex;
+      align-items: center;
+    }
+    .nav-links li:not(:last-child)::after {
+      content: '';
+      width: 1px;
+      height: 20px;
+      background: hsl(210, 20%, 90%);
+      display: block;
     }
     .nav-links a {
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--gray-600);
-      transition: color 0.15s;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(0,0,0,0.6);
+      padding: 8px 20px;
+      transition: color 0.2s;
     }
-    .nav-links a:hover,
+    .nav-links a:hover {
+      color: rgba(0,0,0,1);
+    }
     .nav-links a.active {
-      color: var(--gray-900);
-      font-weight: 700;
+      color: rgba(0,0,0,1);
+      font-weight: 800;
     }
     .nav-right {
       display: flex;
@@ -90,57 +121,89 @@
     .nav-phone {
       text-align: right;
       text-decoration: none;
-      color: var(--gray-900);
+      color: hsl(202, 35%, 12%);
     }
     .nav-phone-label {
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--gray-500);
+      letter-spacing: 1.5px;
+      color: hsl(215, 16%, 47%);
     }
     .nav-phone-number {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 800;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
     .nav-phone-number svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--gray-500);
+      width: 16px;
+      height: 16px;
+      stroke: hsl(202, 35%, 12%);
       fill: none;
       stroke-width: 2;
+    }
+    .nav-phone-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: hsla(202, 100%, 20%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-phone-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: hsl(202, 35%, 12%);
+      fill: none;
+      stroke-width: 2;
+    }
+    .nav-cta-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
     }
     .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--cyan-500);
-      color: var(--white);
+      background: hsl(193, 99%, 43%);
+      color: #ffffff;
       padding: 12px 24px;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 14px;
-      transition: background 0.15s, transform 0.15s;
+      box-shadow: 0 4px 16px hsla(193, 99%, 43%, 0.3);
+      transition: all 0.3s;
     }
     .nav-cta:hover {
-      background: var(--cyan-600);
-      transform: translateY(-1px);
+      box-shadow: 0 4px 20px hsla(193, 99%, 43%, 0.35);
+      transform: translateY(-2px);
     }
     .nav-learn-more {
-      font-size: 13px;
-      color: var(--cyan-500);
-      text-decoration: none;
-      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      color: hsl(193, 99%, 43%);
+      text-decoration: none;
+      transition: color 0.2s;
     }
-
-    /* Mobile nav */
+    .nav-learn-more:hover {
+      color: hsla(193, 99%, 35%, 1);
+    }
+    .nav-learn-more svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
     .nav-mobile-toggle {
       display: none;
       background: none;
@@ -151,7 +214,7 @@
     .nav-mobile-toggle svg {
       width: 28px;
       height: 28px;
-      stroke: var(--gray-700);
+      stroke: #334155;
       fill: none;
       stroke-width: 2;
     }
@@ -1108,10 +1171,11 @@
     @media (max-width: 768px) {
       .nav { padding: 0 20px; }
       .nav-inner { height: 64px; }
-      .nav-links, .nav-learn-more { display: none; }
+      .nav-links { display: none; }
       .nav-phone { display: none; }
       .nav-mobile-toggle { display: block; }
       .nav-logo img { height: 44px; }
+      .nav-logo-text { font-size: 18px; }
 
       .section { padding: 56px 20px; }
       .section-title { font-size: 28px; }
@@ -1145,7 +1209,8 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="../logo.png" alt="PureVida">
+        <img src="../logo.png" alt="PureVida Home">
+        <div class="nav-logo-text"><span>PureVida</span><span>Home</span></div>
       </a>
       <ul class="nav-links">
         <li><a href="/">Welcome</a></li>
@@ -1153,14 +1218,19 @@
         <li><a href="/residential/">Residential</a></li>
       </ul>
       <div class="nav-right">
-        <a href="tel:6157037025" class="nav-phone">
-          <div class="nav-phone-label">Have Questions?</div>
-          <div class="nav-phone-number">
+        <a href="tel:6157037025" class="nav-phone" style="display:flex;align-items:center;gap:12px;">
+          <div class="nav-phone-icon">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            615-703-7025
+          </div>
+          <div>
+            <div class="nav-phone-label">Have Questions?</div>
+            <div class="nav-phone-number">615-703-7025</div>
           </div>
         </a>
-        <a href="/commercial/booking/" class="nav-cta">Schedule My 7-Day Free Trial</a>
+        <div class="nav-cta-col">
+          <a href="/commercial/booking/" class="nav-cta">Free Water Assessment</a>
+          <a href="#solutions" class="nav-learn-more">Learn More <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
       <button class="nav-mobile-toggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
