@@ -10,6 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-56K4HHW2DY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-56K4HHW2DY');
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1356,6 +1366,20 @@
       .nav-links { display: none; }
       .nav-phone { display: none; }
       .nav-mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 16px 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 100;
+      }
+      .nav-links.open li::after { display: none; }
+      .nav-links.open a { padding: 12px 0; font-size: 18px; }
       .nav-logo img { height: 44px; }
 
       .section { padding: 56px 20px; }
@@ -1496,7 +1520,7 @@
   <div style="max-width:1240px;margin:0 auto;padding:0 40px;"><div style="height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);"></div></div>
 
   <!-- ===== SOLUTIONS ===== -->
-  <section class="section">
+  <section class="section" id="solutions">
     <div class="section-inner text-center">
       <span class="section-badge">Our Solutions</span>
       <h2 class="section-title">Systems for Your Home</h2>
@@ -1564,7 +1588,7 @@
   </section>
 
   <!-- ===== RESULTS ===== -->
-  <section class="section impact">
+  <section class="section impact" id="results">
     <div class="section-inner text-center">
       <span class="section-badge">Results</span>
       <h2 class="section-title">Real Results for Your Home</h2>
@@ -1600,7 +1624,7 @@
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="section testimonials">
+  <section class="section testimonials" id="testimonials">
     <div class="section-inner text-center">
       <span class="section-badge">Happy Families</span>
       <h2 class="section-title">Loved by Families Everywhere</h2>
@@ -1671,7 +1695,7 @@
   </section>
 
   <!-- ===== CERTIFICATIONS ===== -->
-  <section class="section certs">
+  <section class="section certs" id="quality">
     <div class="section-inner text-center">
       <span class="section-badge">Trusted Quality</span>
       <h2 class="section-title">100% Certified For Your <span class="gradient-text">Peace Of Mind</span></h2>
@@ -1714,7 +1738,7 @@
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="section how-it-works">
+  <section class="section how-it-works" id="how-it-works">
     <div class="section-inner text-center">
       <span class="section-badge">How It Works</span>
       <h2 class="section-title">Easy Installation Process</h2>
@@ -1772,7 +1796,7 @@
   </section>
 
   <!-- ===== FOUNDER ===== -->
-  <section class="founder-section">
+  <section class="founder-section" id="founder">
     <div class="founder-inner text-center">
       <span class="section-badge">About the Founder</span>
       <h2 class="section-title">Meet Russell Fedell — <span class="accent">Founder of PureVida</span></h2>
@@ -2026,5 +2050,10 @@
 })();
 </script>
 
+<script>
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>

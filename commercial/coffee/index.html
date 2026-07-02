@@ -422,6 +422,20 @@
       .nav-links { display: none; }
       .nav-phone { display: none; }
       .nav-mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 16px 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 100;
+      }
+      .nav-links.open li::after { display: none; }
+      .nav-links.open a { padding: 12px 0; font-size: 18px; }
       .nav-logo img { height: 44px; }
       .nav-logo-text { font-size: 18px; }
 
@@ -633,5 +647,10 @@
 })();
 </script>
 
+<script>
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>

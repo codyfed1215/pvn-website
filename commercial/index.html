@@ -10,6 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-56K4HHW2DY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-56K4HHW2DY');
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1185,6 +1195,20 @@
       .nav-links { display: none; }
       .nav-phone { display: none; }
       .nav-mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 16px 20px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        z-index: 100;
+      }
+      .nav-links.open li::after { display: none; }
+      .nav-links.open a { padding: 12px 0; font-size: 18px; }
       .nav-logo img { height: 44px; }
       .nav-logo-text { font-size: 18px; }
 
@@ -1283,7 +1307,7 @@
   </section>
 
   <!-- ===== TRUSTED BY ===== -->
-  <section class="trusted-by">
+  <section class="trusted-by" id="trusted">
     <h2>Trusted By</h2>
     <div class="trusted-logos">
       <div class="trusted-logo walmart">Walmart</div>
@@ -1366,7 +1390,7 @@
   </section>
 
   <!-- ===== MEASURABLE IMPACT ===== -->
-  <section class="section impact">
+  <section class="section impact" id="results">
     <div class="section-inner text-center">
       <span class="section-badge">Results</span>
       <h2 class="section-title">Measurable Impact</h2>
@@ -1402,7 +1426,7 @@
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="section">
+  <section class="section" id="testimonials">
     <div class="section-inner text-center">
       <span class="section-badge">Client Success Stories</span>
       <h2 class="section-title">Trusted by Industry Leaders</h2>
@@ -1491,7 +1515,7 @@
   </section>
 
   <!-- ===== CERTIFICATIONS ===== -->
-  <section class="section certs">
+  <section class="section certs" id="quality">
     <div class="section-inner text-center">
       <span class="section-badge">Trusted Quality</span>
       <h2 class="section-title">100% Certified For Your <span class="accent">Peace Of Mind</span></h2>
@@ -1534,7 +1558,7 @@
   </section>
 
   <!-- ===== INDUSTRY SOLUTIONS ===== -->
-  <section class="section">
+  <section class="section" id="industries">
     <div class="section-inner text-center">
       <span class="section-badge">Industry Solutions</span>
       <h2 class="section-title">Trusted Across <span class="accent">Every Industry</span></h2>
@@ -1599,7 +1623,7 @@
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="section how-it-works">
+  <section class="section how-it-works" id="how-it-works">
     <div class="section-inner text-center">
       <span class="section-badge">How It Works</span>
       <h2 class="section-title">From Consultation to Installation</h2>
@@ -1654,7 +1678,7 @@
   </section>
 
   <!-- ===== FOUNDER ===== -->
-  <section class="founder-section">
+  <section class="founder-section" id="founder">
     <div class="founder-inner text-center">
       <span class="section-badge">A Message From the Founder</span>
       <h2 class="section-title">About the Founder — <span class="accent">Russell Fedell</span></h2>
@@ -1930,5 +1954,10 @@
 })();
 </script>
 
+<script>
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>
