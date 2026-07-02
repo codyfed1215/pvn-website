@@ -466,7 +466,7 @@
           </div>
         </a>
         <div class="nav-cta-col">
-          <a href="/commercial/booking/" class="nav-cta">Contact Us</a>
+          <a href="#" class="nav-cta" onclick="document.getElementById('contactModal').style.display='flex';return false;">Contact Us</a>
 
         </div>
       </div>
@@ -511,6 +511,128 @@
   <footer class="footer">
     <p>&copy; 2026 PureVida. All rights reserved. &nbsp;|&nbsp; <a href="https://purevida.co">purevida.co</a> &nbsp;|&nbsp; <a href="tel:6157037025">(615) 703-7025</a></p>
   </footer>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="cm-overlay" style="display:none;">
+  <div class="cm-card">
+    <button class="cm-close" onclick="document.getElementById('contactModal').style.display='none';">&times;</button>
+    <div class="cm-icon">
+      <svg width="32" height="32" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16l8 8L26 8"/></svg>
+    </div>
+    <h3 class="cm-title">Contact Us</h3>
+    <p class="cm-subtitle">PureVida will reach out immediately to get you started.</p>
+    <form id="contactModalForm" class="cm-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="cm-row">
+        <input type="text" name="firstName" placeholder="First Name" required class="cm-input" />
+        <input type="text" name="lastName" placeholder="Last Name" required class="cm-input" />
+      </div>
+      <input type="email" name="email" placeholder="Email" required class="cm-input" />
+      <input type="tel" name="phone" id="cmPhone" placeholder="Phone Number" required class="cm-input" />
+      <textarea name="message" placeholder="Tell us about your needs..." rows="3" class="cm-input cm-textarea"></textarea>
+      <input type="hidden" name="lead_source" value="commercial-modal" />
+      <input type="hidden" name="utm_source" id="cm_utm_source" />
+      <input type="hidden" name="utm_medium" id="cm_utm_medium" />
+      <input type="hidden" name="utm_campaign" id="cm_utm_campaign" />
+      <input type="hidden" name="utm_content" id="cm_utm_content" />
+      <input type="hidden" name="utm_term" id="cm_utm_term" />
+      <button type="submit" class="cm-submit" id="cmSubmitBtn">Submit</button>
+    </form>
+    <div class="cm-trust">
+      <span><svg class="cm-check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Free, No-Obligation</span>
+      <span><svg class="cm-check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Full Service Included</span>
+      <span><svg class="cm-check" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Highest Quality Water</span>
+    </div>
+    <div class="cm-success" id="cmSuccess" style="display:none;">
+      <div class="cm-success-icon">
+        <svg width="48" height="48" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 24l8 8L36 16"/></svg>
+      </div>
+      <h3 class="cm-title">You're All Set!</h3>
+      <p class="cm-subtitle">We'll reach out shortly. Check your phone!</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cm-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; z-index:10000; padding:20px; }
+  .cm-card { background:#fff; border-radius:16px; padding:40px 36px; max-width:480px; width:100%; position:relative; box-shadow:0 25px 60px rgba(0,0,0,0.3); text-align:center; max-height:90vh; overflow-y:auto; }
+  .cm-close { position:absolute; top:16px; right:16px; background:none; border:none; font-size:28px; color:#999; cursor:pointer; line-height:1; padding:4px 8px; }
+  .cm-close:hover { color:#333; }
+  .cm-icon { width:64px; height:64px; background:#e0f2fe; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+  .cm-title { font-size:24px; font-weight:700; color:#111; margin:0 0 8px; }
+  .cm-subtitle { font-size:15px; color:#666; margin:0 0 24px; }
+  .cm-form { display:flex; flex-direction:column; gap:12px; }
+  .cm-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .cm-input { width:100%; padding:14px 16px; border:1px solid #e5e7eb; border-radius:12px; font-size:15px; outline:none; transition:border-color 0.2s, box-shadow 0.2s; box-sizing:border-box; font-family:inherit; }
+  .cm-input:focus { border-color:#0ea5e9; box-shadow:0 0 0 3px rgba(14,165,233,0.15); }
+  .cm-textarea { resize:vertical; min-height:70px; }
+  .cm-submit { width:100%; padding:16px; background:#0ea5e9; color:#fff; border:none; border-radius:12px; font-size:17px; font-weight:600; cursor:pointer; transition:background 0.2s; }
+  .cm-submit:hover { background:#0284c7; }
+  .cm-submit:disabled { opacity:0.6; cursor:not-allowed; }
+  .cm-trust { display:flex; justify-content:center; gap:20px; margin-top:20px; font-size:13px; color:#666; flex-wrap:wrap; }
+  .cm-trust span { display:flex; align-items:center; gap:4px; }
+  .cm-check { width:16px; height:16px; fill:#22c55e; flex-shrink:0; }
+  .cm-success-icon { width:80px; height:80px; background:#e0f2fe; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+  @media (max-width:500px) {
+    .cm-card { padding:28px 20px; }
+    .cm-row { grid-template-columns:1fr; }
+    .cm-trust { flex-direction:column; align-items:center; gap:8px; }
+  }
+</style>
+
+<script>
+(function() {
+  document.getElementById('contactModal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('contactModal').style.display = 'none';
+  });
+  var params = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(key) {
+    var val = params.get(key);
+    if (val) sessionStorage.setItem(key, val);
+    var field = document.getElementById('cm_' + key);
+    if (field) field.value = val || sessionStorage.getItem(key) || '';
+  });
+  document.getElementById('cmPhone').addEventListener('input', function(e) {
+    var x = e.target.value.replace(/\D/g, '').substring(0, 10);
+    var f = '';
+    if (x.length > 6) f = '(' + x.substring(0,3) + ') ' + x.substring(3,6) + '-' + x.substring(6);
+    else if (x.length > 3) f = '(' + x.substring(0,3) + ') ' + x.substring(3);
+    else if (x.length > 0) f = '(' + x;
+    e.target.value = f;
+  });
+  document.getElementById('contactModalForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('cmSubmitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    var formData = new FormData(this);
+    var data = {};
+    formData.forEach(function(v, k) { data[k] = v; });
+    data.submitted_at = new Date().toISOString();
+    data.page_url = window.location.href;
+    fetch('https://formspree.io/f/xjgqpooq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function(res) {
+      if (!res.ok) throw new Error('fail');
+      document.getElementById('contactModalForm').style.display = 'none';
+      document.querySelector('.cm-trust').style.display = 'none';
+      document.getElementById('cmSuccess').style.display = 'block';
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { event_category:'form', event_label:'contact_modal' });
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit';
+      alert('Something went wrong. Please try again or call us at (615) 703-7025.');
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
