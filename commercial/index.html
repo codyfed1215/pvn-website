@@ -226,21 +226,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
       background: linear-gradient(135deg, #f0f7fc 0%, #e8f1f8 50%, #dde9f3 100%);
-      z-index: 0;
-    }
-    .hero-bg-image {
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      width: 55%;
-      background: linear-gradient(90deg, rgba(240,247,252,1) 0%, rgba(240,247,252,0.3) 30%, transparent 100%);
-      z-index: 1;
     }
     .hero-content {
       position: relative;
@@ -249,9 +235,31 @@
       margin: 0 auto;
       padding: 80px 40px;
       width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
     }
     .hero-text {
       max-width: 560px;
+    }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      min-height: 450px;
+    }
+    .hero-image img {
+      max-height: 500px;
+      width: auto;
+      object-fit: contain;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .hero-image img.active {
+      opacity: 1;
     }
     .hero h1 {
       font-size: 48px;
@@ -1182,7 +1190,9 @@
       .section-sub { font-size: 15px; }
 
       .hero { min-height: auto; }
-      .hero-content { padding: 48px 20px; }
+      .hero-content { padding: 48px 20px; grid-template-columns: 1fr; }
+      .hero-image { min-height: 300px; }
+      .hero-image img { max-height: 350px; }
       .hero h1 { font-size: 30px; }
       .hero-stats { flex-direction: column; gap: 16px; }
 
@@ -1239,7 +1249,6 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="hero-text">
         <h1>Your Trusted Partner for a Better Workplace <span class="accent">Water. Ice. Coffee.</span></h1>
@@ -1262,15 +1271,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="hero-float-card">
-      <div class="hero-float-badge">Trusted by Businesses Nationwide</div>
-      <div class="hero-float-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      </div>
-      <div>
-        <div class="hero-float-number">720+</div>
-        <div class="hero-float-label">Happy Clients</div>
+      <div class="hero-image">
+        <img src="PV3w.png" alt="PureVida Water System" class="active">
+        <img src="PV7i.png" alt="PureVida Ice & Water System">
+        <img src="PV12c.png" alt="PureVida Coffee System">
       </div>
     </div>
   </section>
@@ -1908,6 +1912,18 @@
       alert('Something went wrong. Please try again or call us at (615) 703-7025.');
     });
   });
+})();
+</script>
+
+<script>
+(function() {
+  var imgs = document.querySelectorAll('.hero-image img');
+  var current = 0;
+  setInterval(function() {
+    imgs[current].classList.remove('active');
+    current = (current + 1) % imgs.length;
+    imgs[current].classList.add('active');
+  }, 3500);
 })();
 </script>
 
