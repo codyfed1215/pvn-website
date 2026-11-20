@@ -668,18 +668,32 @@
 
   <script>
     // TAB SWITCHING
+    function showTab(tab) {
+      var btn = document.querySelector('.tab-btn[data-tab="' + tab + '"]');
+      var panel = document.getElementById(tab);
+      if (!btn || !panel) return false;
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('.product-detail').forEach(function(d) { d.classList.remove('active'); });
+      panel.classList.add('active');
+      return true;
+    }
+
     document.querySelectorAll('.tab-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        // Update active tab
-        document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-
-        // Show matching product detail
         var tab = btn.getAttribute('data-tab');
-        document.querySelectorAll('.product-detail').forEach(function(d) { d.classList.remove('active'); });
-        document.getElementById(tab).classList.add('active');
+        showTab(tab);
+        history.replaceState(null, '', '#' + tab);
       });
     });
+
+    // Deep link: e.g. /commercial/water-systems/#pv3w opens that system
+    function openTabFromHash() {
+      var tab = window.location.hash.replace('#', '').toLowerCase();
+      if (tab) showTab(tab);
+    }
+    openTabFromHash();
+    window.addEventListener('hashchange', openTabFromHash);
   </script>
 
 <!-- Contact Modal -->
